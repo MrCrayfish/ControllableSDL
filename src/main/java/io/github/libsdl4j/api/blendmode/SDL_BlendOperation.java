@@ -10,10 +10,10 @@ public final class SDL_BlendOperation implements JnaEnum {
     /** dst + src: supported by all renderers */
     public static final int SDL_BLENDOPERATION_ADD = 0x1;
 
-    /** dst - src : supported by D3D9, D3D11, OpenGL, OpenGLES */
+    /** src - dst : supported by D3D9, D3D11, OpenGL, OpenGLES */
     public static final int SDL_BLENDOPERATION_SUBTRACT = 0x2;
 
-    /** src - dst : supported by D3D9, D3D11, OpenGL, OpenGLES */
+    /** dst - src : supported by D3D9, D3D11, OpenGL, OpenGLES */
     public static final int SDL_BLENDOPERATION_REV_SUBTRACT = 0x3;
 
     /** min(dst, src) : supported by D3D9, D3D11 */

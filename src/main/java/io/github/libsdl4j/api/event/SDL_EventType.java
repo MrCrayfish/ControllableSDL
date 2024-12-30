@@ -154,6 +154,12 @@ public final class SDL_EventType implements JnaEnum {
     /** Game controller sensor was updated */
     public static final int SDL_CONTROLLERSENSORUPDATE = 0x659;
 
+    /** Reserved */
+    public static final int SDL_CONTROLLERUPDATECOMPLETE_RESERVED_FOR_SDL3 = 0x65A;
+
+    /** Game controller Steam handle has changed */
+    public static final int SDL_CONTROLLERSTEAMHANDLEUPDATED = 0x65B;
+
     public static final int SDL_FINGERDOWN = 0x700;
     public static final int SDL_FINGERUP = 0x701;
     public static final int SDL_FINGERMOTION = 0x702;

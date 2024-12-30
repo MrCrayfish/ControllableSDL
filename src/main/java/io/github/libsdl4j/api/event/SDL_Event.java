@@ -23,7 +23,6 @@ import io.github.libsdl4j.api.event.events.SDL_MouseButtonEvent;
 import io.github.libsdl4j.api.event.events.SDL_MouseMotionEvent;
 import io.github.libsdl4j.api.event.events.SDL_MouseWheelEvent;
 import io.github.libsdl4j.api.event.events.SDL_MultiGestureEvent;
-import io.github.libsdl4j.api.event.events.SDL_OSEvent;
 import io.github.libsdl4j.api.event.events.SDL_QuitEvent;
 import io.github.libsdl4j.api.event.events.SDL_SensorEvent;
 import io.github.libsdl4j.api.event.events.SDL_SysWMEvent;
@@ -34,12 +33,6 @@ import io.github.libsdl4j.api.event.events.SDL_TouchFingerEvent;
 import io.github.libsdl4j.api.event.events.SDL_UserEvent;
 import io.github.libsdl4j.api.event.events.SDL_WindowEvent;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_APP_DIDENTERBACKGROUND;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_APP_DIDENTERFOREGROUND;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_APP_LOWMEMORY;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_APP_TERMINATING;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_APP_WILLENTERBACKGROUND;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_APP_WILLENTERFOREGROUND;
 import static io.github.libsdl4j.api.event.SDL_EventType.SDL_AUDIODEVICEADDED;
 import static io.github.libsdl4j.api.event.SDL_EventType.SDL_AUDIODEVICEREMOVED;
 import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CLIPBOARDUPDATE;
@@ -195,8 +188,6 @@ public final class SDL_Event extends Union {
     /** Quit request event data */
     public SDL_QuitEvent quit;
 
-    public SDL_OSEvent os;
-
     /** Custom event data */
     public SDL_UserEvent user;
 
@@ -217,15 +208,11 @@ public final class SDL_Event extends Union {
             case SDL_QUIT:
                 setType(SDL_QuitEvent.class);
                 break;
-            case SDL_APP_TERMINATING:
-            case SDL_APP_LOWMEMORY:
-            case SDL_APP_WILLENTERBACKGROUND:
-            case SDL_APP_DIDENTERBACKGROUND:
-            case SDL_APP_WILLENTERFOREGROUND:
-            case SDL_APP_DIDENTERFOREGROUND:
-                setType(SDL_OSEvent.class);
-                break;
             case SDL_LOCALECHANGED:
+            case SDL_RENDER_TARGETS_RESET:
+            case SDL_RENDER_DEVICE_RESET:
+            case SDL_CLIPBOARDUPDATE:
+            case SDL_KEYMAPCHANGED:
                 setType(SDL_CommonEvent.class);
                 break;
             case SDL_DISPLAYEVENT:
@@ -246,9 +233,6 @@ public final class SDL_Event extends Union {
                 break;
             case SDL_TEXTINPUT:
                 setType(SDL_TextInputEvent.class);
-                break;
-            case SDL_KEYMAPCHANGED:
-                setType(SDL_CommonEvent.class);
                 break;
             case SDL_TEXTEDITING_EXT:
                 setType(SDL_TextEditingExtEvent.class);
@@ -315,9 +299,6 @@ public final class SDL_Event extends Union {
             case SDL_MULTIGESTURE:
                 setType(SDL_MultiGestureEvent.class);
                 break;
-            case SDL_CLIPBOARDUPDATE:
-                setType(SDL_CommonEvent.class);
-                break;
             case SDL_DROPFILE:
             case SDL_DROPTEXT:
             case SDL_DROPBEGIN:
@@ -330,10 +311,6 @@ public final class SDL_Event extends Union {
                 break;
             case SDL_SENSORUPDATE:
                 setType(SDL_SensorEvent.class);
-                break;
-            case SDL_RENDER_TARGETS_RESET:
-            case SDL_RENDER_DEVICE_RESET:
-                setType(SDL_CommonEvent.class);
                 break;
             default:
                 if (type >= SDL_USEREVENT && type < SDL_LASTEVENT) {

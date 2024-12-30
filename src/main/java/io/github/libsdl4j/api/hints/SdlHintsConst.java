@@ -646,6 +646,110 @@ public final class SdlHintsConst {
     public static final String SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS = "SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS";
 
     /**
+     * A variable containing a list of arcade stick style controllers.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES = "SDL_JOYSTICK_ARCADESTICK_DEVICES";
+
+    /**
+     * A variable containing a list of devices that are not arcade stick style controllers. This will override SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED = "SDL_JOYSTICK_ARCADESTICK_DEVICES_EXCLUDED";
+
+    /**
+     * A variable containing a list of devices that should not be considerd joysticks.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_BLACKLIST_DEVICES = "SDL_JOYSTICK_BLACKLIST_DEVICES";
+
+    /**
+     * A variable containing a list of devices that should be considered joysticks. This will override SDL_HINT_JOYSTICK_BLACKLIST_DEVICES and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED = "SDL_JOYSTICK_BLACKLIST_DEVICES_EXCLUDED";
+
+    /**
+     * A variable containing a list of flightstick style controllers.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES = "SDL_JOYSTICK_FLIGHTSTICK_DEVICES";
+
+    /**
+     * A variable containing a list of devices that are not flightstick style controllers. This will override SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED = "SDL_JOYSTICK_FLIGHTSTICK_DEVICES_EXCLUDED";
+
+    /**
+     * A variable containing a list of devices known to have a GameCube form factor.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_GAMECUBE_DEVICES = "SDL_JOYSTICK_GAMECUBE_DEVICES";
+
+    /**
+     * A variable containing a list of devices known not to have a GameCube form factor. This will override SDL_HINT_JOYSTICK_GAMECUBE_DEVICES and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED = "SDL_JOYSTICK_GAMECUBE_DEVICES_EXCLUDED";
+
+    /**
      * A variable controlling whether the HIDAPI joystick drivers should be used.
      *
      * <p>This variable can be set to the following values:</p>
@@ -889,6 +993,18 @@ public final class SdlHintsConst {
     public static final String SDL_HINT_JOYSTICK_HIDAPI_STEAM = "SDL_JOYSTICK_HIDAPI_STEAM";
 
     /**
+     * A variable controlling whether the HIDAPI driver for the Steam Deck builtin controller should be used.
+     * <p>
+     * This variable can be set to the following values:
+     * <pre>
+     * "0"       - HIDAPI driver is not used
+     * "1"       - HIDAPI driver is used
+     * </pre>
+     * The default is the value of SDL_HINT_JOYSTICK_HIDAPI
+     */
+    public static final String SDL_HINT_JOYSTICK_HIDAPI_STEAMDECK = "SDL_JOYSTICK_HIDAPI_STEAMDECK";
+
+    /**
      * A variable controlling whether the HIDAPI driver for Nintendo Switch controllers should be used.
      *
      * <p>This variable can be set to the following values:</p>
@@ -1039,6 +1155,26 @@ public final class SdlHintsConst {
     public static final String SDL_HINT_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED = "SDL_JOYSTICK_HIDAPI_XBOX_ONE_HOME_LED";
 
     /**
+     * A variable controlling whether IOKit should be used for controller handling.
+     * <p>
+     * This variable can be set to the following values:
+     * <pre>
+     * "0"       - IOKit is not used
+     * "1"       - IOKit is used (the default)</pre>
+     */
+    public static final String SDL_HINT_JOYSTICK_IOKIT = "SDL_JOYSTICK_IOKIT";
+
+    /**
+     * A variable controlling whether GCController should be used for controller handling.
+     * <p>
+     * This variable can be set to the following values:
+     * <pre>
+     * "0"       - GCController is not used
+     * "1"       - GCController is used (the default)</pre>
+     */
+    public static final String SDL_HINT_JOYSTICK_MFI = "SDL_JOYSTICK_MFI";
+
+    /**
      * A variable controlling whether the RAWINPUT joystick drivers should be used for better handling XInput-capable devices.
      *
      * <p>This variable can be set to the following values:</p>
@@ -1088,6 +1224,32 @@ public final class SdlHintsConst {
     public static final String SDL_HINT_JOYSTICK_THREAD = "SDL_JOYSTICK_THREAD";
 
     /**
+     * A variable containing a list of throttle style controllers.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_THROTTLE_DEVICES = "SDL_JOYSTICK_THROTTLE_DEVICES";
+
+    /**
+     * A variable containing a list of devices that are not throttle style controllers. This will override SDL_HINT_JOYSTICK_THROTTLE_DEVICES and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_THROTTLE_DEVICES_EXCLUDED = "SDL_JOYSTICK_THROTTLE_DEVICES_EXCLUDED";
+
+    /**
      * A variable controlling whether Windows.Gaming.Input should be used for controller handling.
      *
      * <p>This variable can be set to the following values:</p>
@@ -1097,6 +1259,45 @@ public final class SdlHintsConst {
      * </pre>
      */
     public static final String SDL_HINT_JOYSTICK_WGI = "SDL_JOYSTICK_WGI";
+
+    /**
+     * A variable containing a list of wheel style controllers.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_WHEEL_DEVICES = "SDL_JOYSTICK_WHEEL_DEVICES";
+
+    /**
+     * A variable containing a list of devices that are not wheel style controllers. This will override SDL_HINT_JOYSTICK_WHEEL_DEVICES and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_WHEEL_DEVICES_EXCLUDED = "SDL_JOYSTICK_WHEEL_DEVICES_EXCLUDED";
+
+    /**
+     * A variable containing a list of devices known to have all axes centered at zero.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_JOYSTICK_ZERO_CENTERED_DEVICES = "SDL_JOYSTICK_ZERO_CENTERED_DEVICES";
 
     /**
      * Determines whether SDL enforces that DRM master is required in order
@@ -1175,6 +1376,22 @@ public final class SdlHintsConst {
      * </pre>
      */
     public static final String SDL_HINT_LINUX_JOYSTICK_DEADZONES = "SDL_LINUX_JOYSTICK_DEADZONES";
+
+    /**
+     * \brief A variable controlling the default SDL log levels.
+     * <p>
+     * This variable is a comma separated set of category=level tokens that define the default logging levels for SDL applications.
+     * <p>
+     * The category can be a numeric category, one of "app", "error", "assert", "system", "audio", "video", "render", "input", "test", or `*` for any unspecified category.
+     * <p>
+     * The level can be a numeric level, one of "verbose", "debug", "info", "warn", "error", "critical", or "quiet" to disable that category.
+     * <p>
+     * You can omit the category if you want to set the logging level for all categories.
+     * <p>
+     * If this hint isn't set, the default log levels are equivalent to:
+     * "app=info,assert=warn,test=verbose,*=error"
+     */
+    public static final String SDL_HINT_LOGGING = "SDL_LOGGING";
 
     /**
      * When set don't force the SDL app to become a foreground process
@@ -1312,6 +1529,18 @@ public final class SdlHintsConst {
      * <p>By default warping the mouse will not generate motion events in relative mode. This avoids the application having to filter out large relative motion due to warping.</p>
      */
     public static final String SDL_HINT_MOUSE_RELATIVE_WARP_MOTION = "SDL_MOUSE_RELATIVE_WARP_MOTION";
+
+    /**
+     * \brief  A variable controlling whether the hardware cursor stays visible when relative mode is active.
+     * <p>
+     * This variable can be set to the following values:
+     * <pre>
+     * "0"       - The cursor will be hidden while relative mode is active (default)
+     * "1"       - The cursor will remain visible while relative mode is active
+     * </pre>
+     * Note that for systems without raw hardware inputs, relative mode is implemented using warping, so the hardware cursor will visibly warp between frames if this is enabled on those systems.
+     */
+    public static final String SDL_HINT_MOUSE_RELATIVE_CURSOR_VISIBLE = "SDL_MOUSE_RELATIVE_CURSOR_VISIBLE";
 
     /**
      * A variable controlling whether mouse events should generate synthetic touch events
@@ -1631,6 +1860,32 @@ public final class SdlHintsConst {
      * <p>By default the preferred OS device is used.</p>
      */
     public static final String SDL_HINT_RENDER_METAL_PREFER_LOW_POWER_DEVICE = "SDL_RENDER_METAL_PREFER_LOW_POWER_DEVICE";
+
+    /**
+     * A variable containing a list of ROG gamepad capable mice.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_ROG_GAMEPAD_MICE = "SDL_ROG_GAMEPAD_MICE";
+
+    /**
+     * A variable containing a list of devices that are not ROG gamepad capable mice. This will override SDL_HINT_ROG_GAMEPAD_MICE and the built in device list.
+     * <p>
+     * The format of the string is a comma separated list of USB VID/PID pairs
+     * in hexadecimal form, e.g.
+     * <p>
+     * 0xAAAA/0xBBBB,0xCCCC/0xDDDD
+     * <p>
+     * The variable can also take the form of @file, in which case the named
+     * file will be loaded and interpreted as the value of the variable.
+     */
+    public static final String SDL_HINT_ROG_GAMEPAD_MICE_EXCLUDED = "SDL_ROG_GAMEPAD_MICE_EXCLUDED";
 
     /**
      * A variable controlling if VSYNC is automatically disable if doesn't reach the enough FPS
@@ -2656,6 +2911,23 @@ public final class SdlHintsConst {
      * <p>This hint is available since SDL 2.24.0.</p>
      */
     public static final String SDL_HINT_TRACKPAD_IS_TOUCH_ONLY = "SDL_TRACKPAD_IS_TOUCH_ONLY";
+
+    /**
+     * Cause SDL to call dbus_shutdown() on quit.
+     * <p>
+     * This is useful as a debug tool to validate memory leaks, but shouldn't ever
+     * be set in production applications, as other libraries used by the application
+     * might use dbus under the hood and this cause cause crashes if they continue
+     * after SDL_Quit().
+     * <p>
+     * This variable can be set to the following values:
+     * <pre>
+     *   "0"       - SDL will not call dbus_shutdown() on quit (default)
+     *   "1"       - SDL will call dbus_shutdown() on quit
+     * </pre>
+     * This hint is available since SDL 2.30.0.
+     */
+    public static final String SDL_HINT_SHUTDOWN_DBUS_ON_QUIT = "SDL_SHUTDOWN_DBUS_ON_QUIT";
 
     private SdlHintsConst() {
     }
