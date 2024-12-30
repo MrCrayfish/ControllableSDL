@@ -1,0 +1,47 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    api libs.net.java.dev.jna.jna
+    api libs.org.jetbrains.annotations
+    api libs.org.slf4j.slf4j.api
+    testImplementation libs.org.junit.jupiter.junit.jupiter
+    testImplementation libs.net.java.dev.jna.jna.platform
+    testImplementation libs.ch.qos.logback.logback.classic
+}
+
+group = 'io.github.libsdl4j'
+version = '2.28.4-1.6'
+description = 'LibSDL4J'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+    options.quiet()
+}
