@@ -26,6 +26,11 @@ class SdlFilesystemTest {
 
         Path actualBasePath = Paths.get(SDL_GetBasePath());
         Path expectedBasePath = Paths.get(System.getProperty("java.home"), "bin");
+        // If the JDK has a JRE folder, it will return that instead. SDL_GetBasePath gets the JDK bin, not JRE bin.
+        String jreBinPath = "jre" + System.getProperty("file.separator") + "bin";
+        if(expectedBasePath.toAbsolutePath().toString().endsWith(jreBinPath)) {
+            expectedBasePath = expectedBasePath.getParent().getParent().resolve("bin");
+        }
         assertEquals(expectedBasePath, actualBasePath);
 
         int allocCountAfter = SDL_GetNumAllocations();
