@@ -1,10 +1,13 @@
 package io.github.libsdl4j.jna;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.sun.jna.Library;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLibrary;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.sun.jna.Library.OPTION_CLASSLOADER;
 import static com.sun.jna.Library.OPTION_STRING_ENCODING;
@@ -23,14 +26,28 @@ public final class SdlNativeLibraryLoader {
         if (libSDL2 == null) {
             libSDL2 = loadLibSDL2();
         }
-        Native.register(nativeClass, libSDL2);
+        Native.register(nativeClass, SDL_LIBRARY_NAME);
     }
 
     private static NativeLibrary loadLibSDL2() {
+        try {
+            // Load from embedded first
+            return loadLibSDL2FromEmbedded();
+        } catch(IOException e) {
+            // Fallback to loading finding installed versions on system
+            Map<String, Object> options = new HashMap<>();
+            options.put(OPTION_STRING_ENCODING, "UTF-8");
+            options.put(OPTION_CLASSLOADER, SdlNativeLibraryLoader.class.getClassLoader());
+            return NativeLibrary.getInstance(SDL_LIBRARY_NAME, options);
+        }
+    }
+
+    private static NativeLibrary loadLibSDL2FromEmbedded() throws IOException {
+        File file = Native.extractFromResourcePath(SDL_LIBRARY_NAME, SdlNativeLibraryLoader.class.getClassLoader());
         Map<String, Object> options = new HashMap<>();
         options.put(OPTION_STRING_ENCODING, "UTF-8");
         options.put(OPTION_CLASSLOADER, SdlNativeLibraryLoader.class.getClassLoader());
-        return NativeLibrary.getInstance(SDL_LIBRARY_NAME, options);
+        return NativeLibrary.getInstance(file.getAbsolutePath(), options);
     }
 
     public static <T extends Library> T loadLibSDL2InterfaceInstance(Class<T> libraryInterface) {
