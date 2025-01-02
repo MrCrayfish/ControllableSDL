@@ -23,9 +23,9 @@ jobs:
           all: true
       - name: Clone SDL and Reset Head
         run: |
-          git clone --branch ${{ steps.properties.outputs.sdl_branch }} https://github.com/libsdl-org/SDL SDL
+          git clone --branch ${{ steps.properties.outputs.sdl2_branch }} https://github.com/libsdl-org/SDL SDL
           cd SDL
-          git reset --hard ${{ steps.properties.outputs.sdl_commit }}
+          git reset --hard ${{ steps.properties.outputs.sdl2_commit }}
       - name: Set up Ninja
         uses: aseprite/get-ninja@main
       - name: 'Set MSVC Architecture'
@@ -74,9 +74,9 @@ jobs:
           all: true
       - name: Clone SDL
         run: |
-          git clone --branch ${{ steps.properties.outputs.sdl_branch }} https://github.com/libsdl-org/SDL SDL
+          git clone --branch ${{ steps.properties.outputs.sdl2_branch }} https://github.com/libsdl-org/SDL SDL
           cd SDL
-          git reset --hard ${{ steps.properties.outputs.sdl_commit }}
+          git reset --hard ${{ steps.properties.outputs.sdl2_commit }}
       - name: Build SDL
         run: |
           CC=./build-scripts/clang-fat.sh ./configure --prefix=$(pwd)/build --enable-shared
