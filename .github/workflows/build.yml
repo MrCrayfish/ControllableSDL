@@ -1,4 +1,4 @@
-name: Build libsdl4j
+name: Build Controllable-SDL
 
 on:
   workflow_dispatch:
