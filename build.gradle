@@ -23,6 +23,13 @@ test {
     useJUnitPlatform()
 }
 
+// Used in CI since we run tests separately when building
+if (project.hasProperty('excludeTests') && project.excludeTests == 'true') {
+    tasks.withType(Test).configureEach {
+        enabled = false
+    }
+}
+
 group = 'io.github.libsdl4j'
 version = "${sdl2_version}-${libsdl4j_version}"
 description = 'LibSDL4J'
