@@ -9,5 +9,5 @@ While ControllableSDL essentially has full API support for SDL2, `video`, `audio
 If you need all modules, set `strip_modules` to `false` in `gradle.properties` and then run the `build.yml` workflow (you'll need to fork the project). Keep in mind that further optimisations may be added in the future, so use this fork at your own risk.
 
 ## License
-See [LICENSE](https://github.com/MrCrayfish/controllable-sdl/blob/master/LICENSE)
+See [LICENSE](https://github.com/MrCrayfish/ControllableSDL/blob/master/LICENSE)
 
