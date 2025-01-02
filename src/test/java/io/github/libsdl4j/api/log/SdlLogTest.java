@@ -6,6 +6,7 @@ import io.github.libsdl4j.api.video.SDL_Window;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
 import static io.github.libsdl4j.api.Sdl.SDL_InitSubSystem;
 import static io.github.libsdl4j.api.Sdl.SDL_QuitSubSystem;
@@ -30,6 +31,7 @@ public final class SdlLogTest {
     }
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "CI", matches = "true")
     public void registerLogCallback() {
         PointerByReference originalLogFunction = new PointerByReference();
         PointerByReference originalUserData = new PointerByReference();

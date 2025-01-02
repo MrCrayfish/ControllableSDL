@@ -6,6 +6,7 @@ import io.github.libsdl4j.api.surface.SDL_Surface;
 import io.github.libsdl4j.api.video.SDL_Window;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
 import static io.github.libsdl4j.api.Sdl.SDL_Init;
 import static io.github.libsdl4j.api.Sdl.SDL_Quit;
@@ -27,6 +28,7 @@ import static io.github.libsdl4j.api.video.SdlVideoConst.SDL_WINDOWPOS_CENTERED;
 public final class SdlPixelsTest {
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "CI", matches = "true")
     public void testPaletteColors() {
         int w = 320;
         int h = 200;

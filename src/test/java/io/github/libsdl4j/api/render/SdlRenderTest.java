@@ -6,6 +6,7 @@ import io.github.libsdl4j.api.video.SDL_Window;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
 import static io.github.libsdl4j.api.Sdl.SDL_InitSubSystem;
 import static io.github.libsdl4j.api.Sdl.SDL_QuitSubSystem;
@@ -44,6 +45,7 @@ public final class SdlRenderTest {
     }
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "CI", matches = "true")
     public void registerLogCallback() {
         SDL_Window window = SDL_CreateWindow("Test window", 200, 250, 400, 300, SDL_WINDOW_SHOWN);
         if (window == null) {
@@ -65,6 +67,7 @@ public final class SdlRenderTest {
     }
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "CI", matches = "true")
     public void lockTextureToSurfaceShouldChangePixelsInTheTexture() throws InterruptedException {
         SDL_Window window = SDL_CreateWindow("Test window", 200, 250, 400, 300, SDL_WINDOW_SHOWN);
         if (window == null) {
