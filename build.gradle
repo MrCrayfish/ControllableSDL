@@ -19,6 +19,10 @@ dependencies {
     testImplementation libs.ch.qos.logback.logback.classic
 }
 
+test {
+    useJUnitPlatform()
+}
+
 group = 'io.github.libsdl4j'
 version = "${sdl2_version}-1.6"
 description = 'LibSDL4J'
