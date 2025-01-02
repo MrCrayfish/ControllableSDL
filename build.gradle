@@ -20,7 +20,7 @@ dependencies {
 }
 
 group = 'io.github.libsdl4j'
-version = '2.28.4-1.6'
+version = "${sdl2_version}-1.6"
 description = 'LibSDL4J'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
