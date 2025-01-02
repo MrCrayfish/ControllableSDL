@@ -1,0 +1,229 @@
+name: Build libsdl4j
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-sdl-windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        config:
+          - { arch: 'x86', name: 'x86', machine_type: '0x014C', output: 'win32-x86' }
+          - { arch: 'x64', name: 'x64', machine_type: '0x8664', output: 'win32-x86-64' }
+          - { arch: 'x86_arm64', name: 'arm64', machine_type: '0xAA64', output: 'win32-arm64' }
+    name: Windows (${{ matrix.config.name }})
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Properties
+        id: properties
+        uses: BrycensRanch/read-properties-action@v1
+        with:
+          file: gradle.properties
+          all: true
+      - name: Clone SDL and Reset Head
+        run: |
+          git clone --branch ${{ steps.properties.outputs.sdl_branch }} https://github.com/libsdl-org/SDL SDL
+          cd SDL
+          git reset --hard ${{ steps.properties.outputs.sdl_commit }}
+      - name: Set up Ninja
+        uses: aseprite/get-ninja@main
+      - name: 'Set MSVC Architecture'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.config.arch }}
+      - name: Build SDL
+        run: |
+          cmake -GNinja -S SDL -B SDL/build -DCMAKE_BUILD_TYPE=Release
+          cmake --build SDL/build --config Release
+      - name: Verify Architecture
+        run: |
+          # Beware, no sanity checks
+          $dllPath = ".\SDL\build\SDL2.dll"
+          $bytes = [System.IO.File]::ReadAllBytes($dllPath)
+          $peOffset = [BitConverter]::ToInt32($bytes, 0x3C)
+          $machineType = [BitConverter]::ToUInt16($bytes, $peOffset + 4)
+          $expectedResult = [UInt16]${{ matrix.config.machine_type }}
+          if ($machineType -ne $expectedResult) {
+            Write-Host "Invalid architecture. Expecting 0x$($expectedResult.ToString("X")), but got 0x$($machineType.ToString("X"))"
+            exit 1
+          }
+          Write-Host "Architecture verification passed!"
+        shell: pwsh
+      - name: Create Natives Structure
+        run: |
+          mkdir artifact_contents
+          cd artifact_contents
+          mkdir ${{ matrix.config.output }}
+          move ../SDL/build/SDL2.dll ${{ matrix.config.output }}
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdl-natives-windows-${{ matrix.config.name }}
+          path: artifact_contents
+  build-sdl-macos:
+    runs-on: macos-latest
+    name: MacOS (Universal)
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Properties
+        id: properties
+        uses: BrycensRanch/read-properties-action@v1
+        with:
+          file: gradle.properties
+          all: true
+      - name: Clone SDL
+        run: |
+          git clone --branch ${{ steps.properties.outputs.sdl_branch }} https://github.com/libsdl-org/SDL SDL
+          cd SDL
+          git reset --hard ${{ steps.properties.outputs.sdl_commit }}
+      - name: Build SDL
+        run: |
+          CC=./build-scripts/clang-fat.sh ./configure --prefix=$(pwd)/build --enable-shared
+          make -j$(sysctl -n hw.ncpu)
+          make install
+        working-directory: SDL
+      - name: Verify Architectures
+        run: |
+          archs=$(lipo -info ./SDL/build/lib/libSDL2.dylib | grep -oE 'x86_64|arm64' | tr '\n' ' ')
+          if [[ "$archs" != *"x86_64"* ]] || [[ "$archs" != *"arm64"* ]]; then
+              echo "The .dylib file does not support both x86_64 and arm64."
+              exit 1
+          fi
+          echo "Architecture verification passed!"
+      - name: Create Natives Structure
+        run: |
+          mkdir artifact_contents
+          cd artifact_contents
+          mkdir -p darwin-x86-64
+          cp ../SDL/build/lib/libSDL2.dylib darwin-x86-64
+          mkdir -p darwin-arm64
+          cp ../SDL/build/lib/libSDL2.dylib darwin-arm64
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdl-natives-macos-universal
+          path: artifact_contents
+  build-sdl-linux:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        config:
+          - { arch: 'i686', name: 'x86', objdump_arch: 'i386', output: 'linux-x86', toolchain: 'gcc-i686-linux-gnu g++-i686-linux-gnu', cflags: '-m32 -march=i686 -mtune=i686', cxxflags: '-m32 -march=i686 -mtune=i686', dumper: 'objdump' }
+          - { arch: 'x86_64', name: 'x64', objdump_arch: 'i386:x86-64', output: 'linux-x86-64', dumper: 'objdump' }
+          - { arch: 'aarch64', name: 'aarch64', objdump_arch: 'aarch64', output: 'linux-aarch64', toolchain: 'gcc-aarch64-linux-gnu g++-aarch64-linux-gnu binutils-aarch64-linux-gnu', cflags: '-march=armv8-a', cxxflags: '-march=armv8-a', dumper: 'aarch64-linux-gnu-objdump' }
+    name: Linux (${{ matrix.config.name }})
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Properties
+        id: properties
+        uses: BrycensRanch/read-properties-action@v1
+        with:
+          file: gradle.properties
+          all: true
+      - name: Clone SDL and Reset Head
+        run: |
+          git clone --branch ${{ steps.properties.outputs.sdl2_branch }} https://github.com/libsdl-org/SDL SDL
+          cd SDL
+          git reset --hard ${{ steps.properties.outputs.sdl2_commit }}
+      - name: Install Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install build-essential libsdl2-dev ${{ matrix.config.toolchain }}
+      - name: Build SDL
+        run: |
+          export CC=${{ matrix.config.arch }}-linux-gnu-gcc
+          export CXX=${{ matrix.config.arch }}-linux-gnu-g++
+          export CFLAGS="${{ matrix.config.cflags }}"
+          export CXXFLAGS="${{ matrix.config.cxxflags }}"
+          ./configure --host=${{ matrix.config.arch }}-linux-gnu --prefix=$(pwd)/build --enable-shared
+          make -j$(nproc)
+          make install
+        working-directory: SDL
+      - name: Verify Architecture
+        run: |
+          expected="${{ matrix.config.objdump_arch }}"
+          found=$(${{ matrix.config.dumper }} -f $(readlink -f ./build/lib/libSDL2.so) | awk '/architecture/ {split($2, a, ","); print a[1]}' | cut -d',' -f1)
+          if [ "$found" != "$expected" ]; then
+            echo "Invalid architecture. Expecting $expected, but got $found"
+            exit 1
+          fi
+          echo "Architecture verification passed!"
+        working-directory: SDL
+      - name: Create Natives Structure
+        run: |
+          mkdir artifact_contents
+          cd artifact_contents
+          mkdir -p ${{ matrix.config.output }}
+          cp -L ../SDL/build/lib/libSDL2.so ${{ matrix.config.output }}/libSDL2.so
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdl-natives-linux-${{ matrix.config.name }}
+          path: artifact_contents
+  build-jar:
+    needs: [build-sdl-windows, build-sdl-macos, build-sdl-linux]
+    runs-on: ubuntu-latest
+    name: Build JAR
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get Properties
+        id: properties
+        uses: BrycensRanch/read-properties-action@v1
+        with:
+          file: gradle.properties
+          all: true
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v4
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Download and Unpack Natives into Resources
+        uses: actions/download-artifact@v4
+        with:
+          path: src/main/resources
+          merge-multiple: true
+      - name: List Natives
+        run: |
+          cd src/main/resources
+          ls
+      - name: Run Tests
+        run: |
+          ./gradlew test
+      - name: Build JAR
+        id: build
+        run: |
+          ./gradlew build -PexcludeTests=true
+          echo "artifact=build/libs/controllable-sdl-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: controllable-sdl-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
+          path: ${{ steps.build.outputs.artifact }}
+
+  #    - name: Publish to GitHub Packages
+  #      run: |
+  #        ./gradlew publish
+  #    - name: Import GPG
+  #      env:
+  #        SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+  #        SIGNING_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+  #      if: ${{ env.SIGNING_KEY != '' && env.SIGNING_PASSPHRASE != '' }}
+  #      uses: crazy-max/ghaction-import-gpg@v6.2.0
+  #      with:
+  #        gpg_private_key: ${{ env.SIGNING_KEY }}
+  #        passphrase: ${{ env.SIGNING_PASSPHRASE }}
+  #    - name: Sign JAR
+  #      env:
+  #        SIGNING_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+  #      if: ${{ env.SIGNING_PASSPHRASE != '' }}
+  #      run: |
+  #        gpg --batch --yes --passphrase "${{ env.SIGNING_PASSPHRASE }}" --armor --detach-sign ${{ steps.build.outputs.artifact }}
+  #    - name: Create Release
+  #      uses: ncipollo/release-action@v1
+  #      with:
+  #        artifacts: '${{ steps.build.outputs.artifact }}, ${{ steps.build.outputs.artifact }}.asc'
