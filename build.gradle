@@ -24,7 +24,7 @@ test {
 }
 
 group = 'io.github.libsdl4j'
-version = "${sdl2_version}-1.6"
+version = "${sdl2_version}-${libsdl4j_version}"
 description = 'LibSDL4J'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
