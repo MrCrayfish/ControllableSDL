@@ -1,8 +1,8 @@
-Controllable-SDL
+ControllableSDL
 ========
-Controllable-SDL is a fork of [libsdl4j](https://github.com/libsdl4j). Its purpose is purely for [Controllable](https://github.com/MrCrayfish/Controllable), a Minecraft mod that adds controller support. It has been modernised to use the Gradle build system and use GitHub workflows for automated testing and building. In comparison to libsdl4j, Controllable-SDL supplies embedded libraries for Windows, Linux, and MacOS and their popular architectures. Controllable-SDL targets the latest released version of SDL2 (`2.30.10`), and unlike libsdl4j, will load embedded libraries first before falling back to searching the system for an SDL installations. This attempts to ensure we are loading `2.30.10` of SDL2, and not an older version.
+ControllableSDL is a fork of [libsdl4j](https://github.com/libsdl4j). Its purpose is purely for [Controllable](https://github.com/MrCrayfish/Controllable), a Minecraft mod that adds game controller support. It has been modernised to use the Gradle build system and use GitHub workflows for automated testing and building. In comparison to libsdl4j, ControllableSDL supplies embedded libraries for Windows, Linux, and MacOS and their popular architectures. ControllableSDL targets the latest released version of SDL2 (`2.30.10`), and unlike libsdl4j, will load embedded libraries first before falling back to searching the system for an SDL installations. This attempts to ensure we are loading `2.30.10` of SDL2, and not an older version.
 
-While Controllable-SDL essentially has full API support for SDL2, `video`, `audio`, and `render` modules have been disabled in releases as:
+While ControllableSDL essentially has full API support for SDL2, `video`, `audio`, and `render` modules have been disabled in releases as:
 - Controllable only requires the modules needed for interfacing with game controllers.
 - It reduces the file size of the natives.
   
