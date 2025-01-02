@@ -31,7 +31,7 @@ if (project.hasProperty('excludeTests') && project.excludeTests == 'true') {
 }
 
 group = 'io.github.libsdl4j'
-version = "${sdl2_version}-${libsdl4j_version}"
+version = "${sdl2_version}-${controllable_sdl_version}"
 description = 'LibSDL4J'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
