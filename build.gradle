@@ -30,9 +30,9 @@ if (project.hasProperty('excludeTests') && project.excludeTests == 'true') {
     }
 }
 
-group = 'io.github.libsdl4j'
+group = 'com.mrcrayfish.controllable_sdl'
 version = "${sdl2_version}-${controllable_sdl_version}"
-description = 'LibSDL4J'
+description = 'ControllableSDL'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 java {
