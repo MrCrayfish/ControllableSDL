@@ -1,12 +1,12 @@
 package com.mrcrayfish.controllable_sdl.api.scancode;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * The SDL keyboard scancode representation.
  *
  * <p>Values of this type are used to represent keyboard keys, among other places
- * in the {@link io.github.libsdl4j.api.keyboard.SDL_Keysym#scancode} and {@code SDL_Event.key.keysym.scancode} field.</p>
+ * in the {@link com.mrcrayfish.controllable_sdl.api.keyboard.SDL_Keysym#scancode} and {@code SDL_Event.key.keysym.scancode} field.</p>
  *
  * <p>The values in this enumeration are based on the USB usage page standard:
  * https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf</p>

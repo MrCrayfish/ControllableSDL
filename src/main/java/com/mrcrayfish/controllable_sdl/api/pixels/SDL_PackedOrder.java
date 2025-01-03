@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.pixels;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /** Packed component order, high bit to low bit. */
 public final class SDL_PackedOrder implements JnaEnum {

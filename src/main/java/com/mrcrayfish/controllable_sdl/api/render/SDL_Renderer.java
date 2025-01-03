@@ -3,7 +3,7 @@ package com.mrcrayfish.controllable_sdl.api.render;
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
 
 /**
  * A structure holding state and settings for rendering operations.

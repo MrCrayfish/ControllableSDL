@@ -2,8 +2,8 @@ package com.mrcrayfish.controllable_sdl.api.surface;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.pixels.SDL_PixelFormat;
-import io.github.libsdl4j.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_PixelFormat;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**

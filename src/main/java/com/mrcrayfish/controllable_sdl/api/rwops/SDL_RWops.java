@@ -4,12 +4,12 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.rwops.SDL_RWopsType.SDL_RWOPS_JNIFILE;
-import static io.github.libsdl4j.api.rwops.SDL_RWopsType.SDL_RWOPS_MEMORY;
-import static io.github.libsdl4j.api.rwops.SDL_RWopsType.SDL_RWOPS_MEMORY_RO;
-import static io.github.libsdl4j.api.rwops.SDL_RWopsType.SDL_RWOPS_STDFILE;
-import static io.github.libsdl4j.api.rwops.SDL_RWopsType.SDL_RWOPS_UNKNOWN;
-import static io.github.libsdl4j.api.rwops.SDL_RWopsType.SDL_RWOPS_WINFILE;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWopsType.SDL_RWOPS_JNIFILE;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWopsType.SDL_RWOPS_MEMORY;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWopsType.SDL_RWOPS_MEMORY_RO;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWopsType.SDL_RWOPS_STDFILE;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWopsType.SDL_RWOPS_UNKNOWN;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWopsType.SDL_RWOPS_WINFILE;
 
 /**
  * This is a structure that holds references to functions for IO operations (read/write/seek).

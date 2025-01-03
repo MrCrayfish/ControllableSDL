@@ -4,10 +4,10 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_MOUSEWHEEL;
-import static io.github.libsdl4j.api.mouse.SDL_MouseWheelDirection.SDL_MOUSEWHEEL_FLIPPED;
-import static io.github.libsdl4j.api.mouse.SDL_MouseWheelDirection.SDL_MOUSEWHEEL_NORMAL;
-import static io.github.libsdl4j.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_MOUSEWHEEL;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_MouseWheelDirection.SDL_MOUSEWHEEL_FLIPPED;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_MouseWheelDirection.SDL_MOUSEWHEEL_NORMAL;
+import static com.mrcrayfish.controllable_sdl.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
 
 /**
  * Mouse wheel event structure (event.wheel.*)
@@ -27,7 +27,7 @@ import static io.github.libsdl4j.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
 })
 public final class SDL_MouseWheelEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_MOUSEWHEEL SDL_MOUSEWHEEL} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_MOUSEWHEEL SDL_MOUSEWHEEL} */
     @MagicConstant(intValues = SDL_MOUSEWHEEL)
     public int type;
 
@@ -37,7 +37,7 @@ public final class SDL_MouseWheelEvent extends Structure {
     /** The window with mouse focus, if any */
     public int windowID;
 
-    /** The mouse instance id, or {@link io.github.libsdl4j.api.touch.SdlTouchConst#SDL_TOUCH_MOUSEID SDL_TOUCH_MOUSEID} */
+    /** The mouse instance id, or {@link com.mrcrayfish.controllable_sdl.api.touch.SdlTouchConst#SDL_TOUCH_MOUSEID SDL_TOUCH_MOUSEID} */
     @MagicConstant(intValues = SDL_TOUCH_MOUSEID)
     public int which;
 
@@ -48,8 +48,8 @@ public final class SDL_MouseWheelEvent extends Structure {
     public int y;
 
     /**
-     * Set to either {@link io.github.libsdl4j.api.mouse.SDL_MouseWheelDirection#SDL_MOUSEWHEEL_NORMAL SDL_MOUSEWHEEL_NORMAL}
-     * or {@link io.github.libsdl4j.api.mouse.SDL_MouseWheelDirection#SDL_MOUSEWHEEL_FLIPPED SDL_MOUSEWHEEL_FLIPPED}.
+     * Set to either {@link com.mrcrayfish.controllable_sdl.api.mouse.SDL_MouseWheelDirection#SDL_MOUSEWHEEL_NORMAL SDL_MOUSEWHEEL_NORMAL}
+     * or {@link com.mrcrayfish.controllable_sdl.api.mouse.SDL_MouseWheelDirection#SDL_MOUSEWHEEL_FLIPPED SDL_MOUSEWHEEL_FLIPPED}.
      * When {@code SDL_MOUSEWHEEL_FLIPPED} the values in {@code X} and {@code Y} will be opposite.
      * Multiply by -1 to change them back
      */

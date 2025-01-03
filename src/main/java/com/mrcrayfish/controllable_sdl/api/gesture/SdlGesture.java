@@ -1,8 +1,8 @@
 package com.mrcrayfish.controllable_sdl.api.gesture;
 
-import io.github.libsdl4j.api.rwops.SDL_RWops;
-import io.github.libsdl4j.api.touch.SDL_TouchID;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWops;
+import com.mrcrayfish.controllable_sdl.api.touch.SDL_TouchID;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
 /**
  * Definitions from file SDL_gesture.h
@@ -26,7 +26,7 @@ public final class SdlGesture {
      *
      * @param touchId the touch device id, or -1 for all touch devices
      * @return 1 on success or 0 if the specified device could not be found.
-     * @see io.github.libsdl4j.api.touch.SdlTouch#SDL_GetTouchDevice(int)
+     * @see com.mrcrayfish.controllable_sdl.api.touch.SdlTouch#SDL_GetTouchDevice(int)
      * @since This function is available since SDL 2.0.0.
      */
     public static native int SDL_RecordGesture(

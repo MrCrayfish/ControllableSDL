@@ -11,16 +11,16 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.api.rect.SDL_Rect;
-import io.github.libsdl4j.api.surface.SDL_Surface;
-import io.github.libsdl4j.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
 
-import static io.github.libsdl4j.api.Sdl.SDL_Init;
-import static io.github.libsdl4j.api.SdlSubSystemConst.SDL_INIT_VIDEO;
-import static io.github.libsdl4j.api.surface.SdlSurface.SDL_FillRect;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_CreateWindowFrom;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_GetWindowSurface;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_UpdateWindowSurface;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Init;
+import static com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst.SDL_INIT_VIDEO;
+import static com.mrcrayfish.controllable_sdl.api.surface.SdlSurface.SDL_FillRect;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_CreateWindowFrom;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_GetWindowSurface;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_UpdateWindowSurface;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class SwingGuiIntegrationTest {

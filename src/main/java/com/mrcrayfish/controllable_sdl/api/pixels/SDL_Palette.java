@@ -5,8 +5,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.Structure;
 
-import static io.github.libsdl4j.api.endian.SdlEndianConst.SDL_BYTEORDER;
-import static io.github.libsdl4j.api.endian.SdlEndianConst.SDL_LIL_ENDIAN;
+import static com.mrcrayfish.controllable_sdl.api.endian.SdlEndianConst.SDL_BYTEORDER;
+import static com.mrcrayfish.controllable_sdl.api.endian.SdlEndianConst.SDL_LIL_ENDIAN;
 
 /**
  * A structure that contains palette information.
@@ -15,7 +15,7 @@ import static io.github.libsdl4j.api.endian.SdlEndianConst.SDL_LIL_ENDIAN;
  * of the {@link SDL_Palette} structure stored in {@link SDL_PixelFormat}.
  * An {@link SDL_Palette} should never need to be created manually.
  * It is automatically created when SDL allocates an {@link SDL_PixelFormat} for a surface.
- * The {@code colors} values of an {@link io.github.libsdl4j.api.surface.SDL_Surface SDL_Surface}'s
+ * The {@code colors} values of an {@link com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface SDL_Surface}'s
  * palette can be set with {@link SdlPixels#SDL_SetPaletteColors(SDL_Palette, List, int, int)}  SDL_SetPaletteColors(...)}.
  *
  * <p><b>Implementation note:</b> {@code SDL_Palette} would normally be implemented as a JNA {@link Structure}

@@ -1,20 +1,20 @@
 package com.mrcrayfish.controllable_sdl.api.messagebox;
 
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.error.SdlError;
-import io.github.libsdl4j.jna.ContiguousArrayList;
+import com.mrcrayfish.controllable_sdl.api.error.SdlError;
+import com.mrcrayfish.controllable_sdl.jna.ContiguousArrayList;
 
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxButtonFlags.SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxButtonFlags.SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BACKGROUND;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BUTTON_BORDER;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_TEXT;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_INFORMATION;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_WARNING;
-import static io.github.libsdl4j.api.messagebox.SdlMessagebox.SDL_ShowMessageBox;
-import static io.github.libsdl4j.api.messagebox.SdlMessagebox.SDL_ShowSimpleMessageBox;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxButtonFlags.SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxButtonFlags.SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BACKGROUND;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BUTTON_BORDER;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxColorType.SDL_MESSAGEBOX_COLOR_TEXT;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_INFORMATION;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_WARNING;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SdlMessagebox.SDL_ShowMessageBox;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SdlMessagebox.SDL_ShowSimpleMessageBox;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SdlMessageboxTest {

@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.keyboard;
 
-import io.github.libsdl4j.api.Sdl;
+import com.mrcrayfish.controllable_sdl.api.Sdl;
 import org.junit.jupiter.api.Test;
 
 public final class SdlKeyboardTest {

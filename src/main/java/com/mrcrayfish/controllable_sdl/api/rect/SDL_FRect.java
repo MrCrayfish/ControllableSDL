@@ -3,7 +3,7 @@ package com.mrcrayfish.controllable_sdl.api.rect;
 import java.util.List;
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.jna.FloatRef;
+import com.mrcrayfish.controllable_sdl.jna.FloatRef;
 
 /**
  * {@code SDL_FRect} is a simple structure that contains only four floating values:

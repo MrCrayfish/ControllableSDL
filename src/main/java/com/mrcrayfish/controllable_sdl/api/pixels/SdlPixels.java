@@ -6,9 +6,9 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.ByteByReference;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.ShortByReference;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**
@@ -150,7 +150,7 @@ public final class SdlPixels {
      * @return 0 on success or a negative error code if not all of the colors
      * could be set; call SDL_GetError() for more information.
      * @see #SDL_AllocPalette(int)
-     * @see io.github.libsdl4j.api.surface.SdlSurface#SDL_CreateRGBSurface(int, int, int, int, int, int, int, int)
+     * @see com.mrcrayfish.controllable_sdl.api.surface.SdlSurface#SDL_CreateRGBSurface(int, int, int, int, int, int, int, int)
      * @since This function is available since SDL 2.0.0.
      */
     public static int SDL_SetPaletteColors(
@@ -182,7 +182,7 @@ public final class SdlPixels {
      * @return 0 on success or a negative error code if not all of the colors
      * could be set; call SDL_GetError() for more information.
      * @see #SDL_AllocPalette(int)
-     * @see io.github.libsdl4j.api.surface.SdlSurface#SDL_CreateRGBSurface(int, int, int, int, int, int, int, int)
+     * @see com.mrcrayfish.controllable_sdl.api.surface.SdlSurface#SDL_CreateRGBSurface(int, int, int, int, int, int, int, int)
      * @since This function is available since SDL 2.0.0.
      */
     public static native int SDL_SetPaletteColors(
@@ -334,7 +334,7 @@ public final class SdlPixels {
      *
      * @param gamma a gamma value where 0.0 is black and 1.0 is identity
      * @param ramp  an array of 256 values filled in with the gamma ramp
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_SetWindowGammaRamp(SDL_Window, short[], short[], short[]) SDL_SetWindowGammaRamp(SDL_Window, short[], short[], short[])
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_SetWindowGammaRamp(SDL_Window, short[], short[], short[]) SDL_SetWindowGammaRamp(SDL_Window, short[], short[], short[])
      * @since This function is available since SDL 2.0.0.
      */
     public static native void SDL_CalculateGammaRamp(

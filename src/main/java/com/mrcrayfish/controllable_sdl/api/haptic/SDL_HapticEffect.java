@@ -10,18 +10,18 @@ import com.mrcrayfish.controllable_sdl.api.haptic.effect.SDL_HapticPeriodic;
 import com.mrcrayfish.controllable_sdl.api.haptic.effect.SDL_HapticRamp;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_CONSTANT;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_CUSTOM;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_DAMPER;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_FRICTION;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_INERTIA;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_LEFTRIGHT;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_RAMP;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHDOWN;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHUP;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SINE;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SPRING;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_TRIANGLE;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_CONSTANT;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_CUSTOM;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_DAMPER;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_FRICTION;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_INERTIA;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_LEFTRIGHT;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_RAMP;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHDOWN;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHUP;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SINE;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SPRING;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_TRIANGLE;
 
 /**
  * The generic template for any haptic effect.

@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.log;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * The predefined log categories. Also known as logger names.

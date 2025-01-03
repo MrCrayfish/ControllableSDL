@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.gamecontroller;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * The list of axes available from a controller

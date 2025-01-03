@@ -4,8 +4,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_MOUSEMOTION;
-import static io.github.libsdl4j.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_MOUSEMOTION;
+import static com.mrcrayfish.controllable_sdl.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
 
 /**
  * Mouse motion event structure (event.motion.*)
@@ -23,7 +23,7 @@ import static io.github.libsdl4j.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
 })
 public final class SDL_MouseMotionEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_MOUSEMOTION SDL_MOUSEMOTION} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_MOUSEMOTION SDL_MOUSEMOTION} */
     @MagicConstant(intValues = SDL_MOUSEMOTION)
     public int type;
 
@@ -35,7 +35,7 @@ public final class SDL_MouseMotionEvent extends Structure {
 
     /**
      * The mouse instance id, or
-     * {@link io.github.libsdl4j.api.touch.SdlTouchConst#SDL_TOUCH_MOUSEID SDL_TOUCH_MOUSEID}
+     * {@link com.mrcrayfish.controllable_sdl.api.touch.SdlTouchConst#SDL_TOUCH_MOUSEID SDL_TOUCH_MOUSEID}
      */
     @MagicConstant(intValues = SDL_TOUCH_MOUSEID)
     public int which;

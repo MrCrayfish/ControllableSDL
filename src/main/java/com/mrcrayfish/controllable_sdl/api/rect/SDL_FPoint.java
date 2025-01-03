@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.rect;
 
 import java.util.List;
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.PojoStructure;
+import com.mrcrayfish.controllable_sdl.jna.PojoStructure;
 
 /**
  * The structure that defines a point (floating point)

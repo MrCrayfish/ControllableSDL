@@ -1,8 +1,8 @@
 package com.mrcrayfish.controllable_sdl.api.blendmode;
 
-import io.github.libsdl4j.api.render.SDL_Renderer;
-import io.github.libsdl4j.api.render.SDL_Texture;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.render.SDL_Renderer;
+import com.mrcrayfish.controllable_sdl.api.render.SDL_Texture;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**
@@ -107,10 +107,10 @@ public final class SdlBlendmode {
      *                       component of the source and destination pixels
      * @return an SDL_BlendMode that represents the chosen factors and
      * operations.
-     * @see io.github.libsdl4j.api.render.SdlRender#SDL_SetRenderDrawBlendMode(SDL_Renderer, int)
-     * @see io.github.libsdl4j.api.render.SdlRender#SDL_GetRenderDrawBlendMode(SDL_Renderer, SDL_BlendMode.Ref)
-     * @see io.github.libsdl4j.api.render.SdlRender#SDL_SetTextureBlendMode(SDL_Texture, int)
-     * @see io.github.libsdl4j.api.render.SdlRender#SDL_GetTextureBlendMode(SDL_Texture, SDL_BlendMode.Ref)
+     * @see com.mrcrayfish.controllable_sdl.api.render.SdlRender#SDL_SetRenderDrawBlendMode(SDL_Renderer, int)
+     * @see com.mrcrayfish.controllable_sdl.api.render.SdlRender#SDL_GetRenderDrawBlendMode(SDL_Renderer, SDL_BlendMode.Ref)
+     * @see com.mrcrayfish.controllable_sdl.api.render.SdlRender#SDL_SetTextureBlendMode(SDL_Texture, int)
+     * @see com.mrcrayfish.controllable_sdl.api.render.SdlRender#SDL_GetTextureBlendMode(SDL_Texture, SDL_BlendMode.Ref)
      * @since This function is available since SDL 2.0.6.
      */
     @MagicConstant(valuesFromClass = SDL_BlendMode.class)

@@ -4,7 +4,7 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_QUIT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_QUIT;
 
 /**
  * The "quit requested" event
@@ -15,7 +15,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_QUIT;
 })
 public final class SDL_QuitEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_QUIT SDL_QUIT} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_QUIT SDL_QUIT} */
     @MagicConstant(intValues = SDL_QUIT)
     public int type;
 

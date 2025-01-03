@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.hints;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * An enumeration of hint priorities

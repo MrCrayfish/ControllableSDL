@@ -3,8 +3,8 @@ package com.mrcrayfish.controllable_sdl.api.bits;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static io.github.libsdl4j.api.bits.SdlBits.SDL_HasExactlyOneBitSet32;
-import static io.github.libsdl4j.api.bits.SdlBits.SDL_MostSignificantBitIndex32;
+import static com.mrcrayfish.controllable_sdl.api.bits.SdlBits.SDL_HasExactlyOneBitSet32;
+import static com.mrcrayfish.controllable_sdl.api.bits.SdlBits.SDL_MostSignificantBitIndex32;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SdlBitsTest {

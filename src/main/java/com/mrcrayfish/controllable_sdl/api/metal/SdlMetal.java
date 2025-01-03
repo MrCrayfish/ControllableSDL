@@ -2,8 +2,8 @@ package com.mrcrayfish.controllable_sdl.api.metal;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
 /**
  * Definitions from file SDL_metal.h
@@ -66,8 +66,8 @@ public final class SdlMetal {
      * @param window SDL_Window from which the drawable size should be queried
      * @param w      Pointer to variable for storing the width in pixels, may be null
      * @param h      Pointer to variable for storing the height in pixels, may be null
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_GetWindowSize(SDL_Window, IntByReference, IntByReference)
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_CreateWindow(String, int, int, int, int, int)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_GetWindowSize(SDL_Window, IntByReference, IntByReference)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_CreateWindow(String, int, int, int, int, int)
      * @since This function is available since SDL 2.0.14.
      */
     public static native void SDL_Metal_GetDrawableSize(

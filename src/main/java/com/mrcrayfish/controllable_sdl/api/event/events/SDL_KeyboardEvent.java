@@ -2,13 +2,13 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.keyboard.SDL_Keysym;
+import com.mrcrayfish.controllable_sdl.api.keyboard.SDL_Keysym;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_KEYDOWN;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_KEYUP;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_PRESSED;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_KEYDOWN;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_KEYUP;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_PRESSED;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_RELEASED;
 
 /**
  * Keyboard button event structure (event.key.*)
@@ -26,8 +26,8 @@ import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
 public final class SDL_KeyboardEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_KEYDOWN SDL_KEYDOWN}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_KEYUP SDL_KEYUP}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_KEYDOWN SDL_KEYDOWN}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_KEYUP SDL_KEYUP}
      */
     @MagicConstant(intValues = {SDL_KEYDOWN, SDL_KEYUP})
     public int type;
@@ -39,8 +39,8 @@ public final class SDL_KeyboardEvent extends Structure {
     public int windowID;
 
     /**
-     * {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
-     * or {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
      */
     @MagicConstant(intValues = {SDL_PRESSED, SDL_RELEASED})
     public byte state;

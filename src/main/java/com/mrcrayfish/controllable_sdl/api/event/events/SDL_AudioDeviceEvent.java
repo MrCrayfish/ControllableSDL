@@ -4,8 +4,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_AUDIODEVICEADDED;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_AUDIODEVICEREMOVED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_AUDIODEVICEADDED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_AUDIODEVICEREMOVED;
 
 /**
  * Audio device event structure (event.adevice.*)
@@ -22,8 +22,8 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_AUDIODEVICEREMOVED;
 public final class SDL_AudioDeviceEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_AUDIODEVICEADDED SDL_AUDIODEVICEADDED}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_AUDIODEVICEREMOVED SDL_AUDIODEVICEREMOVED}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_AUDIODEVICEADDED SDL_AUDIODEVICEADDED}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_AUDIODEVICEREMOVED SDL_AUDIODEVICEREMOVED}
      */
     @MagicConstant(intValues = {SDL_AUDIODEVICEADDED, SDL_AUDIODEVICEREMOVED})
     public int type;

@@ -2,9 +2,9 @@ package com.mrcrayfish.controllable_sdl.api.keyboard;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.event.SDL_EventType;
-import io.github.libsdl4j.api.keycode.SDL_Keycode;
-import io.github.libsdl4j.api.scancode.SDL_Scancode;
+import com.mrcrayfish.controllable_sdl.api.event.SDL_EventType;
+import com.mrcrayfish.controllable_sdl.api.keycode.SDL_Keycode;
+import com.mrcrayfish.controllable_sdl.api.scancode.SDL_Scancode;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**

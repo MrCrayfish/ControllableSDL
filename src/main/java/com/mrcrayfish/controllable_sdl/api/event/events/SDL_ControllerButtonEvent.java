@@ -2,14 +2,14 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.gamecontroller.SDL_GameControllerButton;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerButton;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERBUTTONDOWN;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERBUTTONUP;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_PRESSED;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERBUTTONDOWN;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERBUTTONUP;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_PRESSED;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_RELEASED;
 
 /**
  * Game controller button event structure (event.cbutton.*)
@@ -26,8 +26,8 @@ import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
 public final class SDL_ControllerButtonEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERBUTTONDOWN SDL_CONTROLLERBUTTONDOWN}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERBUTTONUP SDL_CONTROLLERBUTTONUP}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERBUTTONDOWN SDL_CONTROLLERBUTTONDOWN}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERBUTTONUP SDL_CONTROLLERBUTTONUP}
      */
     @MagicConstant(intValues = {SDL_CONTROLLERBUTTONDOWN, SDL_CONTROLLERBUTTONUP})
     public int type;
@@ -43,8 +43,8 @@ public final class SDL_ControllerButtonEvent extends Structure {
     public byte button;
 
     /**
-     * {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
-     * or {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
      */
     @MagicConstant(intValues = {SDL_PRESSED, SDL_RELEASED})
     public byte state;

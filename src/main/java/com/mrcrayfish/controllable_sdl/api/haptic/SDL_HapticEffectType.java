@@ -4,8 +4,8 @@ import com.mrcrayfish.controllable_sdl.api.haptic.effect.SDL_HapticCondition;
 import com.mrcrayfish.controllable_sdl.api.haptic.effect.SDL_HapticLeftRight;
 import com.mrcrayfish.controllable_sdl.api.haptic.effect.SDL_HapticPeriodic;
 import com.mrcrayfish.controllable_sdl.api.haptic.effect.SDL_HapticRamp;
-import io.github.libsdl4j.jna.JnaEnum;
-import io.github.libsdl4j.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
 
 public final class SDL_HapticEffectType implements JnaEnum {
 

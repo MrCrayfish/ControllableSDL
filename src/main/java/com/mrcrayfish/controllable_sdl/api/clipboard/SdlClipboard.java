@@ -1,8 +1,8 @@
 package com.mrcrayfish.controllable_sdl.api.clipboard;
 
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
 /**
  * Definitions from file SDL_clipboard.h

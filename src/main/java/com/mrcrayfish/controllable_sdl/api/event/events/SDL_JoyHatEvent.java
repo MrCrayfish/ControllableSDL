@@ -2,19 +2,19 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYHATMOTION;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_CENTERED;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_DOWN;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_LEFT;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_LEFTDOWN;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_LEFTUP;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_RIGHT;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_RIGHTDOWN;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_RIGHTUP;
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_UP;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_JOYHATMOTION;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_CENTERED;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_DOWN;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_LEFT;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_LEFTDOWN;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_LEFTUP;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_RIGHT;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_RIGHTDOWN;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_RIGHTUP;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_HAT_UP;
 
 /**
  * Joystick hat position change event structure (event.jhat.*)
@@ -30,7 +30,7 @@ import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_HAT_UP;
 })
 public final class SDL_JoyHatEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_JOYHATMOTION SDL_JOYHATMOTION} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_JOYHATMOTION SDL_JOYHATMOTION} */
     @MagicConstant(intValues = SDL_JOYHATMOTION)
     public int type;
 
@@ -46,15 +46,15 @@ public final class SDL_JoyHatEvent extends Structure {
     /**
      * The hat position value.
      *
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_LEFTUP
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_UP
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_RIGHTUP
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_LEFT
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_CENTERED
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_RIGHT
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_LEFTDOWN
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_DOWN
-     * @see io.github.libsdl4j.api.joystick.SdlJoystickConst#SDL_HAT_RIGHTDOWN
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_LEFTUP
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_UP
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_RIGHTUP
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_LEFT
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_CENTERED
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_RIGHT
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_LEFTDOWN
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_DOWN
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst#SDL_HAT_RIGHTDOWN
      *
      * <p>Note that zero means the POV is centered.</p>
      */

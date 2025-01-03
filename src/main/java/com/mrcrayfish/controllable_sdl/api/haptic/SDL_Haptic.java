@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.haptic;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
-import io.github.libsdl4j.api.joystick.SDL_Joystick;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_Joystick;
 
 /**
  * The haptic structure used to identify an SDL haptic.

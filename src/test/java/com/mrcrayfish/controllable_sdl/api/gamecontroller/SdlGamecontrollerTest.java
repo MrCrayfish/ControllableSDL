@@ -2,10 +2,10 @@ package com.mrcrayfish.controllable_sdl.api.gamecontroller;
 
 import org.junit.jupiter.api.Test;
 
-import static io.github.libsdl4j.api.Sdl.SDL_Init;
-import static io.github.libsdl4j.api.Sdl.SDL_Quit;
-import static io.github.libsdl4j.api.gamecontroller.SdlGamecontroller.SDL_GameControllerUpdate;
-import static io.github.libsdl4j.api.gamecontroller.SdlGamecontroller.SDL_IsGameController;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Init;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Quit;
+import static com.mrcrayfish.controllable_sdl.api.gamecontroller.SdlGamecontroller.SDL_GameControllerUpdate;
+import static com.mrcrayfish.controllable_sdl.api.gamecontroller.SdlGamecontroller.SDL_IsGameController;
 
 public final class SdlGamecontrollerTest {
 

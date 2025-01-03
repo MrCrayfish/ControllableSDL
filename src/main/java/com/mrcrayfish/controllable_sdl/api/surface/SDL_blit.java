@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.surface;
 
-import io.github.libsdl4j.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
 
 @FunctionalInterface
 public interface SDL_blit {

@@ -4,10 +4,10 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DROPBEGIN;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DROPCOMPLETE;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DROPFILE;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DROPTEXT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DROPBEGIN;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DROPCOMPLETE;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DROPFILE;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DROPTEXT;
 
 /**
  * An event used to request a file open by the system (event.drop.*)
@@ -24,10 +24,10 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DROPTEXT;
 public final class SDL_DropEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DROPBEGIN SDL_DROPBEGIN}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DROPFILE SDL_DROPFILE}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DROPTEXT SDL_DROPTEXT}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DROPCOMPLETE SDL_DROPCOMPLETE}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DROPBEGIN SDL_DROPBEGIN}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DROPFILE SDL_DROPFILE}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DROPTEXT SDL_DROPTEXT}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DROPCOMPLETE SDL_DROPCOMPLETE}
      */
     @MagicConstant(intValues = {SDL_DROPBEGIN, SDL_DROPFILE, SDL_DROPTEXT, SDL_DROPCOMPLETE})
     public int type;

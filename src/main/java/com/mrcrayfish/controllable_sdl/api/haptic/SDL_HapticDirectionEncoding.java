@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.haptic;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 public final class SDL_HapticDirectionEncoding implements JnaEnum {
 

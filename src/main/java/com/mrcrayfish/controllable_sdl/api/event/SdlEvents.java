@@ -5,13 +5,13 @@ import com.sun.jna.Callback;
 import com.sun.jna.CallbackReference;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_DISABLE;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_ENABLE;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_IGNORE;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_QUERY;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_DISABLE;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_ENABLE;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_IGNORE;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_QUERY;
 
 /**
  * Definitions from file SDL_events.h

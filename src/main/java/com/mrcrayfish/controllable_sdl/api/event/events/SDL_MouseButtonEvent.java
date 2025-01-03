@@ -4,11 +4,11 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_MOUSEBUTTONDOWN;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_MOUSEBUTTONUP;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_PRESSED;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
-import static io.github.libsdl4j.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_MOUSEBUTTONDOWN;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_MOUSEBUTTONUP;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_PRESSED;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_RELEASED;
+import static com.mrcrayfish.controllable_sdl.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
 
 /**
  * Mouse button event structure (event.button.*)
@@ -28,8 +28,8 @@ import static io.github.libsdl4j.api.touch.SdlTouchConst.SDL_TOUCH_MOUSEID;
 public final class SDL_MouseButtonEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_MOUSEBUTTONDOWN SDL_MOUSEBUTTONDOWN}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_MOUSEBUTTONUP SDL_MOUSEBUTTONUP}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_MOUSEBUTTONDOWN SDL_MOUSEBUTTONDOWN}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_MOUSEBUTTONUP SDL_MOUSEBUTTONUP}
      */
     @MagicConstant(intValues = {SDL_MOUSEBUTTONDOWN, SDL_MOUSEBUTTONUP})
     public int type;
@@ -48,8 +48,8 @@ public final class SDL_MouseButtonEvent extends Structure {
     public byte button;
 
     /**
-     * {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
-     * or {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
      */
     @MagicConstant(intValues = {SDL_PRESSED, SDL_RELEASED})
     public byte state;

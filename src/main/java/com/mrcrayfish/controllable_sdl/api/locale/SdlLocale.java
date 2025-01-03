@@ -3,9 +3,9 @@ package com.mrcrayfish.controllable_sdl.api.locale;
 import java.util.ArrayList;
 import java.util.List;
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
-import static io.github.libsdl4j.api.stdinc.SdlStdinc.SDL_free;
+import static com.mrcrayfish.controllable_sdl.api.stdinc.SdlStdinc.SDL_free;
 
 /**
  * Definitions from file SDL_locale.h

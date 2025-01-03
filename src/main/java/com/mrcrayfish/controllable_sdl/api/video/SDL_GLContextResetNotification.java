@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.video;
 
-import io.github.libsdl4j.jna.JnaEnum;
-import io.github.libsdl4j.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
 
 /**
  * Values for the OpenGL attribute key {@link SDL_GLattr#SDL_GL_CONTEXT_RESET_NOTIFICATION}.

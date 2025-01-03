@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.rwops;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.size_t;
+import com.mrcrayfish.controllable_sdl.jna.size_t;
 
 /**
  * <p><b>Warning:</b> It is necessary to keep a reference to the callback object somewhere in your Java program,

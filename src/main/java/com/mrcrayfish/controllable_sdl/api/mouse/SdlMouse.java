@@ -2,14 +2,14 @@ package com.mrcrayfish.controllable_sdl.api.mouse;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.surface.SDL_Surface;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_DISABLE;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_ENABLE;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_QUERY;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_DISABLE;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_ENABLE;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_QUERY;
 
 /**
  * Definitions from file SDL_mouse.h
@@ -49,7 +49,7 @@ public final class SdlMouse {
      * @return a 32-bit button bitmask of the current button state.
      * @see #SDL_GetGlobalMouseState(IntByReference, IntByReference)
      * @see #SDL_GetRelativeMouseState(IntByReference, IntByReference)
-     * @see io.github.libsdl4j.api.event.SdlEvents#SDL_PumpEvents()
+     * @see com.mrcrayfish.controllable_sdl.api.event.SdlEvents#SDL_PumpEvents()
      * @since This function is available since SDL 2.0.0.
      */
     @MagicConstant(flagsFromClass = SDL_ButtonMask.class)

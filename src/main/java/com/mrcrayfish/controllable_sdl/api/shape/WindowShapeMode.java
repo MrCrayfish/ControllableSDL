@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.shape;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * An enum denoting the specific type of contents present in an SDL_WindowShapeParams union.

@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.video;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.api.rect.SDL_Point;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Point;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**

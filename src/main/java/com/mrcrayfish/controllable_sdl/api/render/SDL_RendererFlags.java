@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.render;
 
-import io.github.libsdl4j.jna.JnaEnum;
-import io.github.libsdl4j.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
 
 /**
  * Flags used when creating a rendering context

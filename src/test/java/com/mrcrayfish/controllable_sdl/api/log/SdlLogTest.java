@@ -2,26 +2,26 @@ package com.mrcrayfish.controllable_sdl.api.log;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
-import static io.github.libsdl4j.api.Sdl.SDL_InitSubSystem;
-import static io.github.libsdl4j.api.Sdl.SDL_QuitSubSystem;
-import static io.github.libsdl4j.api.SdlSubSystemConst.SDL_INIT_EVERYTHING;
-import static io.github.libsdl4j.api.error.SdlError.SDL_GetError;
-import static io.github.libsdl4j.api.log.SDL_LogCategory.SDL_LOG_CATEGORY_ASSERT;
-import static io.github.libsdl4j.api.log.SDL_LogPriority.SDL_LOG_PRIORITY_INFO;
-import static io.github.libsdl4j.api.log.SDL_LogPriority.SDL_LOG_PRIORITY_VERBOSE;
-import static io.github.libsdl4j.api.log.SdlLog.SDL_LogGetOutputFunction;
-import static io.github.libsdl4j.api.log.SdlLog.SDL_LogMessage;
-import static io.github.libsdl4j.api.log.SdlLog.SDL_LogSetAllPriority;
-import static io.github.libsdl4j.api.log.SdlLog.SDL_LogSetOutputFunction;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_CreateWindow;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_DestroyWindow;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_InitSubSystem;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_QuitSubSystem;
+import static com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst.SDL_INIT_EVERYTHING;
+import static com.mrcrayfish.controllable_sdl.api.error.SdlError.SDL_GetError;
+import static com.mrcrayfish.controllable_sdl.api.log.SDL_LogCategory.SDL_LOG_CATEGORY_ASSERT;
+import static com.mrcrayfish.controllable_sdl.api.log.SDL_LogPriority.SDL_LOG_PRIORITY_INFO;
+import static com.mrcrayfish.controllable_sdl.api.log.SDL_LogPriority.SDL_LOG_PRIORITY_VERBOSE;
+import static com.mrcrayfish.controllable_sdl.api.log.SdlLog.SDL_LogGetOutputFunction;
+import static com.mrcrayfish.controllable_sdl.api.log.SdlLog.SDL_LogMessage;
+import static com.mrcrayfish.controllable_sdl.api.log.SdlLog.SDL_LogSetAllPriority;
+import static com.mrcrayfish.controllable_sdl.api.log.SdlLog.SDL_LogSetOutputFunction;
+import static com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_CreateWindow;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_DestroyWindow;
 
 public final class SdlLogTest {
 

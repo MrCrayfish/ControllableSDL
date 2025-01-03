@@ -1,10 +1,10 @@
 package com.mrcrayfish.controllable_sdl.api.version;
 
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
-import static io.github.libsdl4j.api.version.SdlVersionConst.SDL_MAJOR_VERSION;
-import static io.github.libsdl4j.api.version.SdlVersionConst.SDL_MINOR_VERSION;
-import static io.github.libsdl4j.api.version.SdlVersionConst.SDL_PATCHLEVEL;
+import static com.mrcrayfish.controllable_sdl.api.version.SdlVersionConst.SDL_MAJOR_VERSION;
+import static com.mrcrayfish.controllable_sdl.api.version.SdlVersionConst.SDL_MINOR_VERSION;
+import static com.mrcrayfish.controllable_sdl.api.version.SdlVersionConst.SDL_PATCHLEVEL;
 
 /**
  * Definitions from file SDL_version.h

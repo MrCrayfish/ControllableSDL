@@ -5,7 +5,7 @@ import com.sun.jna.Structure;
 import com.mrcrayfish.controllable_sdl.api.syswm.event.SDL_SysWMmsg;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_SYSWMEVENT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_SYSWMEVENT;
 
 /**
  * A video driver dependent system event (event.syswm.*)
@@ -20,7 +20,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_SYSWMEVENT;
 })
 public final class SDL_SysWMEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_SYSWMEVENT SDL_SYSWMEVENT} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_SYSWMEVENT SDL_SYSWMEVENT} */
     @MagicConstant(intValues = SDL_SYSWMEVENT)
     public int type;
 

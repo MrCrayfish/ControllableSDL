@@ -2,24 +2,24 @@ package com.mrcrayfish.controllable_sdl.api.haptic.effect;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.haptic.SDL_HapticDirection;
+import com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticDirection;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_DAMPER;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_FRICTION;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_INERTIA;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SPRING;
-import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_DAMPER;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_FRICTION;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_INERTIA;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SPRING;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
 
 /**
  * A structure containing a template for a Condition effect.
  *
  * <p>The struct handles the following effects:</p>
  * <ul>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SPRING SDL_HAPTIC_SPRING}: Effect based on axes position.</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_DAMPER SDL_HAPTIC_DAMPER}: Effect based on axes velocity.</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_INERTIA SDL_HAPTIC_INERTIA}: Effect based on axes acceleration.</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_FRICTION SDL_HAPTIC_FRICTION}: Effect based on axes movement.</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SPRING SDL_HAPTIC_SPRING}: Effect based on axes position.</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_DAMPER SDL_HAPTIC_DAMPER}: Effect based on axes velocity.</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_INERTIA SDL_HAPTIC_INERTIA}: Effect based on axes acceleration.</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_FRICTION SDL_HAPTIC_FRICTION}: Effect based on axes movement.</li>
  * </ul>
  *
  * <p>Direction is handled by condition internals instead of a direction member.
@@ -31,11 +31,11 @@ import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
  * which is negative.</p>
  *
  * @see SDL_HapticDirection
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SPRING
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_DAMPER
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_INERTIA
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_FRICTION
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffect SDL_HapticEffect
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SPRING
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_DAMPER
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_INERTIA
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_FRICTION
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffect SDL_HapticEffect
  */
 @Structure.FieldOrder({
         "type",
@@ -54,10 +54,10 @@ import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
 public final class SDL_HapticCondition extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SPRING SDL_HAPTIC_SPRING},
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_DAMPER SDL_HAPTIC_DAMPER},
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_INERTIA SDL_HAPTIC_INERTIA}
-     * or {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_FRICTION SDL_HAPTIC_FRICTION}
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SPRING SDL_HAPTIC_SPRING},
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_DAMPER SDL_HAPTIC_DAMPER},
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_INERTIA SDL_HAPTIC_INERTIA}
+     * or {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_FRICTION SDL_HAPTIC_FRICTION}
      */
     @MagicConstant(intValues = {
             SDL_HAPTIC_SPRING,

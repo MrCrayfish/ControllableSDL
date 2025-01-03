@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 public final class SdlSubSystemConst implements JnaEnum {
 

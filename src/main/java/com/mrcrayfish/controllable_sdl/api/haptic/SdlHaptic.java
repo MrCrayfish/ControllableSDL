@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.haptic;
 
-import io.github.libsdl4j.api.joystick.SDL_Joystick;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_Joystick;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**
@@ -12,7 +12,7 @@ import org.intellij.lang.annotations.MagicConstant;
  *
  * <p>The basic usage is as follows:</p>
  * <ol>
- *     <li>Initialize the subsystem ({@link io.github.libsdl4j.api.SdlSubSystemConst#SDL_INIT_HAPTIC SDL_INIT_HAPTIC}).</li>
+ *     <li>Initialize the subsystem ({@link com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst#SDL_INIT_HAPTIC SDL_INIT_HAPTIC}).</li>
  *     <li>Open a haptic device.
  *         <ol>
  *             <li>SDL_HapticOpen() to open from index.</li>

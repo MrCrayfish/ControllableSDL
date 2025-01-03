@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.mouse;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * Cursor types for SDL_CreateSystemCursor().

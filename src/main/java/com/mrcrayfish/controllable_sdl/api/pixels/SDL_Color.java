@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.pixels;
 
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.PojoStructure;
+import com.mrcrayfish.controllable_sdl.jna.PojoStructure;
 
 /**
  * The bits of this structure can be directly reinterpreted as an integer-packed

@@ -2,12 +2,12 @@ package com.mrcrayfish.controllable_sdl.api.syswm.event;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE;
-import io.github.libsdl4j.api.version.SDL_version;
+import com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE;
+import com.mrcrayfish.controllable_sdl.api.version.SDL_version;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WINDOWS;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_X11;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WINDOWS;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_X11;
 
 /**
  * The custom window manager information structure.

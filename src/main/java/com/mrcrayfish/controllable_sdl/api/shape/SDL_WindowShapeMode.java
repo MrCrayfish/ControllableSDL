@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.shape;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.pixels.SDL_Color;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_Color;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**

@@ -1,16 +1,16 @@
 package com.mrcrayfish.controllable_sdl.api.quit;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_QUIT;
-import static io.github.libsdl4j.api.event.SDL_eventaction.SDL_PEEKEVENT;
-import static io.github.libsdl4j.api.event.SdlEvents.SDL_PeepEvents;
-import static io.github.libsdl4j.api.event.SdlEvents.SDL_PumpEvents;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_QUIT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_eventaction.SDL_PEEKEVENT;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEvents.SDL_PeepEvents;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEvents.SDL_PumpEvents;
 
 /**
  * Definitions from file SDL_quit.h
  *
  * <p>Include file for SDL quit event handling.</p>
  *
- * <p>An {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_QUIT SDL_QUIT}
+ * <p>An {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_QUIT SDL_QUIT}
  * event is generated when the user tries to close the application
  * window.  If it is ignored or filtered out, the window will remain open.
  * If it is not ignored or filtered, it is queued normally and the window
@@ -19,13 +19,13 @@ import static io.github.libsdl4j.api.event.SdlEvents.SDL_PumpEvents;
  *
  * <p>SDL_Init() installs signal handlers for SIGINT (keyboard interrupt)
  * and SIGTERM (system termination request), if handlers do not already
- * exist, that generate {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_QUIT SDL_QUIT} events as well.
- * There is no way to determine the cause of an {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_QUIT SDL_QUIT}
+ * exist, that generate {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_QUIT SDL_QUIT} events as well.
+ * There is no way to determine the cause of an {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_QUIT SDL_QUIT}
  * event, but setting a signal
  * handler in your application will override the default generation of
  * quit events for that signal.</p>
  *
- * @see io.github.libsdl4j.api.Sdl#SDL_Quit() SDL_Quit()
+ * @see com.mrcrayfish.controllable_sdl.api.Sdl#SDL_Quit() SDL_Quit()
  */
 public final class SdlQuit {
 

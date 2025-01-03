@@ -2,10 +2,10 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYBALLMOTION;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_JOYBALLMOTION;
 
 /**
  * Joystick trackball motion event structure (event.jball.*)
@@ -23,7 +23,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYBALLMOTION;
 })
 public final class SDL_JoyBallEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_JOYBALLMOTION SDL_JOYBALLMOTION} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_JOYBALLMOTION SDL_JOYBALLMOTION} */
     @MagicConstant(intValues = SDL_JOYBALLMOTION)
     public int type;
 

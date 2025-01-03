@@ -2,13 +2,13 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYBUTTONDOWN;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYBUTTONUP;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_PRESSED;
-import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_JOYBUTTONDOWN;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_JOYBUTTONUP;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_PRESSED;
+import static com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst.SDL_RELEASED;
 
 /**
  * Joystick button event structure (event.jbutton.*)
@@ -25,8 +25,8 @@ import static io.github.libsdl4j.api.event.SdlEventsConst.SDL_RELEASED;
 public final class SDL_JoyButtonEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_JOYBUTTONDOWN SDL_JOYBUTTONDOWN}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_JOYBUTTONUP SDL_JOYBUTTONUP}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_JOYBUTTONDOWN SDL_JOYBUTTONDOWN}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_JOYBUTTONUP SDL_JOYBUTTONUP}
      */
     @MagicConstant(intValues = {SDL_JOYBUTTONDOWN, SDL_JOYBUTTONUP})
     public int type;
@@ -41,8 +41,8 @@ public final class SDL_JoyButtonEvent extends Structure {
     public byte button;
 
     /**
-     * {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
-     * or {@link io.github.libsdl4j.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_PRESSED SDL_PRESSED}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SdlEventsConst#SDL_RELEASED SDL_RELEASED}
      */
     @MagicConstant(intValues = {SDL_PRESSED, SDL_RELEASED})
     public byte state;

@@ -5,9 +5,9 @@ import com.sun.jna.Structure;
 import com.sun.jna.Union;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTROLLER_BINDTYPE_AXIS;
-import static io.github.libsdl4j.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTROLLER_BINDTYPE_BUTTON;
-import static io.github.libsdl4j.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTROLLER_BINDTYPE_HAT;
+import static com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTROLLER_BINDTYPE_AXIS;
+import static com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTROLLER_BINDTYPE_BUTTON;
+import static com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerBindType.SDL_CONTROLLER_BINDTYPE_HAT;
 
 /**
  * Get the SDL joystick layer binding for this controller button/axis mapping

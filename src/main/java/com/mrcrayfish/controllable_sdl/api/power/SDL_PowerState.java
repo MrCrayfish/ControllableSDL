@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.power;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * The basic state for the system's power supply.

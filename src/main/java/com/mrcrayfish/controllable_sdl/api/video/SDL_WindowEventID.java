@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.video;
 
 import com.mrcrayfish.controllable_sdl.api.event.events.SDL_WindowEvent;
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
 /**
  * Event subtype for window events.

@@ -2,13 +2,13 @@ package com.mrcrayfish.controllable_sdl.api.haptic.effect;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.haptic.SDL_HapticDirection;
-import io.github.libsdl4j.api.haptic.SDL_HapticEffect;
-import io.github.libsdl4j.api.haptic.SDL_HapticEffectType;
+import com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticDirection;
+import com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffect;
+import com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_CONSTANT;
-import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_CONSTANT;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
 
 /**
  * A structure containing a template for a Constant effect.

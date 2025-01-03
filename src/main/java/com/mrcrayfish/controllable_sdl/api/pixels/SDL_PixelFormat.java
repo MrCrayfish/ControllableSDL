@@ -38,7 +38,7 @@ import org.intellij.lang.annotations.MagicConstant;
  * </table>
  *
  * <p>An {@code SDL_PixelFormat} describes the format of the pixel data stored
- * at the {@code pixels} property of an {@link io.github.libsdl4j.api.surface.SDL_Surface SDL_Surface}.
+ * at the {@code pixels} property of an {@link com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface SDL_Surface}.
  * Every surface stores an {@code SDL_PixelFormat} in the {@code format} property.</p>
  *
  * <p>If you wish to do pixel level modifications on a surface,

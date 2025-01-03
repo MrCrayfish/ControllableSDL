@@ -4,19 +4,19 @@ import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.FloatByReference;
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.pixels.SDL_PixelFormatEnum;
-import io.github.libsdl4j.api.rect.SDL_Point;
-import io.github.libsdl4j.api.rect.SDL_Rect;
-import io.github.libsdl4j.api.surface.SDL_Surface;
-import io.github.libsdl4j.jna.ContiguousArrayList;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
-import io.github.libsdl4j.jna.size_t;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_PixelFormatEnum;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Point;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.jna.ContiguousArrayList;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.size_t;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.stdinc.SdlStdinc.SDL_free;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN_DESKTOP;
+import static com.mrcrayfish.controllable_sdl.api.stdinc.SdlStdinc.SDL_free;
+import static com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN;
+import static com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN_DESKTOP;
 
 /**
  * Definitions from file SDL_video.h
@@ -79,7 +79,7 @@ public final class SdlVideo {
      * SDL_GetError() for more information.
      * @see #SDL_GetNumVideoDrivers()
      * @see #SDL_GetVideoDriver(int)
-     * @see io.github.libsdl4j.api.Sdl#SDL_InitSubSystem(int) SDL_InitSubSystem(int)
+     * @see com.mrcrayfish.controllable_sdl.api.Sdl#SDL_InitSubSystem(int) SDL_InitSubSystem(int)
      * @see #SDL_VideoQuit()
      * @since This function is available since SDL 2.0.0.
      */
@@ -767,7 +767,7 @@ public final class SdlVideo {
      * @param h      a pointer filled in with the height of the window, in screen
      *               coordinates, may be null
      * @see #SDL_GL_GetDrawableSize(SDL_Window, IntByReference, IntByReference)
-     * @see io.github.libsdl4j.api.vulkan.SdlVulkan#SDL_Vulkan_GetDrawableSize(SDL_Window, IntByReference, IntByReference) SDL_Vulkan_GetDrawableSize(SDL_Window, IntByReference, IntByReference)
+     * @see com.mrcrayfish.controllable_sdl.api.vulkan.SdlVulkan#SDL_Vulkan_GetDrawableSize(SDL_Window, IntByReference, IntByReference) SDL_Vulkan_GetDrawableSize(SDL_Window, IntByReference, IntByReference)
      * @see #SDL_SetWindowSize(SDL_Window, int, int)
      * @since This function is available since SDL 2.0.0.
      */

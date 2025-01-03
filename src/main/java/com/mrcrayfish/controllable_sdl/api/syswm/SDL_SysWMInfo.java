@@ -2,19 +2,19 @@ package com.mrcrayfish.controllable_sdl.api.syswm;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.version.SDL_version;
+import com.mrcrayfish.controllable_sdl.api.version.SDL_version;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_ANDROID;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_COCOA;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_DIRECTFB;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_KMSDRM;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_UIKIT;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_VIVANTE;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WAYLAND;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WINDOWS;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WINRT;
-import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_X11;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_ANDROID;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_COCOA;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_DIRECTFB;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_KMSDRM;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_UIKIT;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_VIVANTE;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WAYLAND;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WINDOWS;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_WINRT;
+import static com.mrcrayfish.controllable_sdl.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_X11;
 
 /**
  * The custom window manager information structure.
@@ -25,7 +25,7 @@ import static io.github.libsdl4j.api.syswm.SDL_SYSWM_TYPE.SDL_SYSWM_X11;
  * <p>Your application has access to a special type of event {@code SDL_SYSWMEVENT},
  * which contains window-manager specific information and arrives whenever
  * an unhandled window event occurs.  This event is ignored by default, but
- * you can enable it with {@link io.github.libsdl4j.api.event.SdlEvents#SDL_EventState(int, int)}.</p>
+ * you can enable it with {@link com.mrcrayfish.controllable_sdl.api.event.SdlEvents#SDL_EventState(int, int)}.</p>
  */
 @Structure.FieldOrder({
         "version",

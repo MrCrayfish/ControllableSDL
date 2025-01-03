@@ -1,8 +1,8 @@
 package com.mrcrayfish.controllable_sdl.api.audio;
 
-import static io.github.libsdl4j.api.endian.SdlEndianConst.SDL_BIG_ENDIAN;
-import static io.github.libsdl4j.api.endian.SdlEndianConst.SDL_BYTEORDER;
-import static io.github.libsdl4j.api.endian.SdlEndianConst.SDL_LIL_ENDIAN;
+import static com.mrcrayfish.controllable_sdl.api.endian.SdlEndianConst.SDL_BIG_ENDIAN;
+import static com.mrcrayfish.controllable_sdl.api.endian.SdlEndianConst.SDL_BYTEORDER;
+import static com.mrcrayfish.controllable_sdl.api.endian.SdlEndianConst.SDL_LIL_ENDIAN;
 
 public final class SdlAudioConst {
 

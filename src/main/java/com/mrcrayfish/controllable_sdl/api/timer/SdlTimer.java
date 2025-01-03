@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.timer;
 
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
 /**
  * Definitions from file SDL_timer.h

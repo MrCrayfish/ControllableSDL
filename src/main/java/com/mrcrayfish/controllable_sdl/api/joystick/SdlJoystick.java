@@ -5,7 +5,7 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.ShortByReference;
 import com.mrcrayfish.controllable_sdl.api.joystick.virtual.SDL_VirtualJoystickDesc;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 
@@ -28,7 +28,7 @@ import org.intellij.lang.annotations.MagicConstant;
  * the device (a X360 wired controller for example). This identifier is platform dependent.</p>
  *
  * <p>In order to use these functions, SDL_Init() must have been called
- * with the {@link io.github.libsdl4j.api.SdlSubSystemConst#SDL_INIT_JOYSTICK SDL_INIT_JOYSTICK} flag.  This causes SDL to scan the system
+ * with the {@link com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst#SDL_INIT_JOYSTICK SDL_INIT_JOYSTICK} flag.  This causes SDL to scan the system
  * for joysticks, and load appropriate drivers.</p>
  *
  * <p>If you would like to receive joystick updates while the application
@@ -678,7 +678,7 @@ public final class SdlJoystick {
      *
      * <p>If {@code state} is {@code SDL_QUERY} then the current state is returned,
      * otherwise the new processing state is returned.</p>
-     * @see io.github.libsdl4j.api.gamecontroller.SdlGamecontroller#SDL_GameControllerEventState(int)
+     * @see com.mrcrayfish.controllable_sdl.api.gamecontroller.SdlGamecontroller#SDL_GameControllerEventState(int)
      * @since This function is available since SDL 2.0.0.
      */
     public static native int SDL_JoystickEventState(

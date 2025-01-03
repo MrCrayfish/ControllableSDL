@@ -3,7 +3,7 @@ package com.mrcrayfish.controllable_sdl.api.rect;
 import java.util.List;
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.jna.IntRef;
+import com.mrcrayfish.controllable_sdl.jna.IntRef;
 
 /**
  * {@code SDL_Rect} is a simple structure that contains only four int values:

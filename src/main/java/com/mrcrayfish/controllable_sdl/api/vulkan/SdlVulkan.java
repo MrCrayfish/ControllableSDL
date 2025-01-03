@@ -6,8 +6,8 @@ import com.sun.jna.Pointer;
 import com.sun.jna.StringArray;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
 /**
  * Definitions from file SDL_vulkan.h
@@ -181,8 +181,8 @@ public final class SdlVulkan {
      * @param window an SDL_Window for which the size is to be queried
      * @param w      Pointer to the variable to write the width to or null
      * @param h      Pointer to the variable to write the height to or null
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_GetWindowSize(SDL_Window, IntByReference, IntByReference)
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_CreateWindow(String, int, int, int, int, int)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_GetWindowSize(SDL_Window, IntByReference, IntByReference)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_CreateWindow(String, int, int, int, int, int)
      * @see #SDL_Vulkan_CreateSurface(SDL_Window, Pointer, PointerByReference)
      * @since This function is available since SDL 2.0.6.
      */

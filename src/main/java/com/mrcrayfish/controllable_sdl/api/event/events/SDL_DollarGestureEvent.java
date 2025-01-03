@@ -2,12 +2,12 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.gesture.SDL_GestureID;
-import io.github.libsdl4j.api.touch.SDL_TouchID;
+import com.mrcrayfish.controllable_sdl.api.gesture.SDL_GestureID;
+import com.mrcrayfish.controllable_sdl.api.touch.SDL_TouchID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DOLLARGESTURE;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DOLLARRECORD;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DOLLARGESTURE;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DOLLARRECORD;
 
 /**
  * Dollar Gesture Event (event.dgesture.*)
@@ -25,8 +25,8 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DOLLARRECORD;
 public final class SDL_DollarGestureEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DOLLARGESTURE SDL_DOLLARGESTURE}
-     * or {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DOLLARRECORD SDL_DOLLARRECORD}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DOLLARGESTURE SDL_DOLLARGESTURE}
+     * or {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DOLLARRECORD SDL_DOLLARRECORD}
      */
     @MagicConstant(intValues = {SDL_DOLLARGESTURE, SDL_DOLLARRECORD})
     public int type;

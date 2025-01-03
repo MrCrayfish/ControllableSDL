@@ -1,13 +1,13 @@
 package com.mrcrayfish.controllable_sdl.api.messagebox;
 
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_ERROR;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_INFORMATION;
-import static io.github.libsdl4j.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_WARNING;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_ERROR;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_INFORMATION;
+import static com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxFlags.SDL_MESSAGEBOX_WARNING;
 
 public final class SdlMessagebox {
 

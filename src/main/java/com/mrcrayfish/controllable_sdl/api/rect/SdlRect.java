@@ -2,12 +2,12 @@ package com.mrcrayfish.controllable_sdl.api.rect;
 
 import java.util.Iterator;
 import java.util.List;
-import io.github.libsdl4j.jna.ContiguousArrayList;
-import io.github.libsdl4j.jna.FloatRef;
-import io.github.libsdl4j.jna.IntRef;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.ContiguousArrayList;
+import com.mrcrayfish.controllable_sdl.jna.FloatRef;
+import com.mrcrayfish.controllable_sdl.jna.IntRef;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
-import static io.github.libsdl4j.api.stdinc.SdlStdincConst.SDL_FLT_EPSILON;
+import static com.mrcrayfish.controllable_sdl.api.stdinc.SdlStdincConst.SDL_FLT_EPSILON;
 
 /**
  * Definitions from file SDL_rect.h

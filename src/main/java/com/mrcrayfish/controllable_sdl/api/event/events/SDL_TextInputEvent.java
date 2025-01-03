@@ -4,7 +4,7 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_TEXTINPUT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_TEXTINPUT;
 
 /**
  * Keyboard text input event structure (event.text.*)
@@ -19,7 +19,7 @@ public final class SDL_TextInputEvent extends Structure {
 
     private static final int SDL_TEXTINPUTEVENT_TEXT_SIZE = 32;
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_TEXTINPUT SDL_TEXTINPUT} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_TEXTINPUT SDL_TEXTINPUT} */
     @MagicConstant(intValues = SDL_TEXTINPUT)
     public int type;
 

@@ -2,10 +2,10 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYAXISMOTION;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_JOYAXISMOTION;
 
 /**
  * Joystick axis motion event structure (event.jaxis.*)
@@ -23,7 +23,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYAXISMOTION;
 })
 public final class SDL_JoyAxisEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_JOYAXISMOTION SDL_JOYAXISMOTION} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_JOYAXISMOTION SDL_JOYAXISMOTION} */
     @MagicConstant(intValues = SDL_JOYAXISMOTION)
     public int type;
 

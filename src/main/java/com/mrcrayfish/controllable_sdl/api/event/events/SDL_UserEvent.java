@@ -17,8 +17,8 @@ import com.sun.jna.Structure;
 public final class SDL_UserEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_USEREVENT SDL_USEREVENT}
-     * through {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_LASTEVENT SDL_LASTEVENT}-1
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_USEREVENT SDL_USEREVENT}
+     * through {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_LASTEVENT SDL_LASTEVENT}-1
      */
     public int type;
 

@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.rwops;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.jna.size_t;
+import com.mrcrayfish.controllable_sdl.jna.size_t;
 
 @Structure.FieldOrder({
         "data",

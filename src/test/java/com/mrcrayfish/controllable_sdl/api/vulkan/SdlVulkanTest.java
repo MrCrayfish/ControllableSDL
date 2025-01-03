@@ -1,20 +1,20 @@
 package com.mrcrayfish.controllable_sdl.api.vulkan;
 
 import java.util.List;
-import io.github.libsdl4j.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
-import static io.github.libsdl4j.api.Sdl.SDL_InitSubSystem;
-import static io.github.libsdl4j.api.Sdl.SDL_QuitSubSystem;
-import static io.github.libsdl4j.api.SdlSubSystemConst.SDL_INIT_VIDEO;
-import static io.github.libsdl4j.api.error.SdlError.SDL_GetError;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_VULKAN;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_CreateWindow;
-import static io.github.libsdl4j.api.vulkan.SdlVulkan.SDL_Vulkan_GetInstanceExtensions;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_InitSubSystem;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_QuitSubSystem;
+import static com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst.SDL_INIT_VIDEO;
+import static com.mrcrayfish.controllable_sdl.api.error.SdlError.SDL_GetError;
+import static com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
+import static com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags.SDL_WINDOW_VULKAN;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_CreateWindow;
+import static com.mrcrayfish.controllable_sdl.api.vulkan.SdlVulkan.SDL_Vulkan_GetInstanceExtensions;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class SdlVulkanTest {

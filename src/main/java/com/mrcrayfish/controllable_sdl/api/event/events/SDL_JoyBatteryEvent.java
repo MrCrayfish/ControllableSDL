@@ -2,11 +2,11 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
-import io.github.libsdl4j.api.joystick.SDL_JoystickPowerLevel;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickPowerLevel;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYBATTERYUPDATED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_JOYBATTERYUPDATED;
 
 /**
  * Joysick battery level change event structure (event.jbattery.*)
@@ -19,7 +19,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_JOYBATTERYUPDATED;
 })
 public final class SDL_JoyBatteryEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_JOYBATTERYUPDATED SDL_JOYBATTERYUPDATED} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_JOYBATTERYUPDATED SDL_JOYBATTERYUPDATED} */
     @MagicConstant(intValues = SDL_JOYBATTERYUPDATED)
     public int type;
 

@@ -4,7 +4,7 @@ import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
 
 /**
  * The type used to identify a window

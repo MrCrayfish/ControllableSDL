@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.blendmode;
 
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**

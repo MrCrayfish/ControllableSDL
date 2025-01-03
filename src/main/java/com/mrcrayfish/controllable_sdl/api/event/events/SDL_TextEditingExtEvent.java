@@ -2,10 +2,10 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_TEXTEDITING_EXT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_TEXTEDITING_EXT;
 
 /**
  * Extended keyboard text editing event structure (event.editExt.*) when text would be
@@ -21,7 +21,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_TEXTEDITING_EXT;
 })
 public final class SDL_TextEditingExtEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_TEXTEDITING_EXT SDL_TEXTEDITING_EXT} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_TEXTEDITING_EXT SDL_TEXTEDITING_EXT} */
     @MagicConstant(intValues = SDL_TEXTEDITING_EXT)
     public int type;
 

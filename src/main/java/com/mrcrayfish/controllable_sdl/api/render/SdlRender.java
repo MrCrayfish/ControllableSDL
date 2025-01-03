@@ -7,22 +7,22 @@ import com.sun.jna.ptr.ByteByReference;
 import com.sun.jna.ptr.FloatByReference;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.blendmode.SDL_BlendMode;
-import io.github.libsdl4j.api.pixels.SDL_PixelFormatEnum;
-import io.github.libsdl4j.api.rect.SDL_FPoint;
-import io.github.libsdl4j.api.rect.SDL_FRect;
-import io.github.libsdl4j.api.rect.SDL_Point;
-import io.github.libsdl4j.api.rect.SDL_Rect;
-import io.github.libsdl4j.api.surface.SDL_Surface;
-import io.github.libsdl4j.api.video.SDL_GLContext;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.api.video.SDL_WindowFlags;
-import io.github.libsdl4j.jna.ContiguousArrayList;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.blendmode.SDL_BlendMode;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_PixelFormatEnum;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_FPoint;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_FRect;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Point;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_GLContext;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags;
+import com.mrcrayfish.controllable_sdl.jna.ContiguousArrayList;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.error.SdlError.SDL_SetError;
+import static com.mrcrayfish.controllable_sdl.api.error.SdlError.SDL_SetError;
 
 /**
  * Definitions from file SDL_render.h
@@ -105,7 +105,7 @@ public final class SdlRender {
      * @return 0 on success, or -1 on error; call SDL_GetError() for more
      * information.
      * @see #SDL_CreateRenderer(SDL_Window, int, int)
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_CreateWindow(String, int, int, int, int, int)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_CreateWindow(String, int, int, int, int, int)
      * @since This function is available since SDL 2.0.0.
      */
     public static native int SDL_CreateWindowAndRenderer(
@@ -2153,7 +2153,7 @@ public final class SdlRender {
      *                texture height or null if you don't need that value
      * @return 0 on success, or -1 if the operation is not supported; call
      * SDL_GetError() for more information.
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_GL_MakeCurrent(SDL_Window, SDL_GLContext)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_GL_MakeCurrent(SDL_Window, SDL_GLContext)
      * @see #SDL_GL_UnbindTexture(SDL_Texture)
      * @since This function is available since SDL 2.0.0.
      */
@@ -2170,7 +2170,7 @@ public final class SdlRender {
      * @param texture the texture to unbind from the current OpenGL/ES/ES2 context
      * @return 0 on success, or -1 if the operation is not supported
      * @see #SDL_GL_BindTexture(SDL_Texture, FloatByReference, FloatByReference)
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_GL_MakeCurrent(SDL_Window, SDL_GLContext)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_GL_MakeCurrent(SDL_Window, SDL_GLContext)
      * @since This function is available since SDL 2.0.0.
      */
     public static native int SDL_GL_UnbindTexture(

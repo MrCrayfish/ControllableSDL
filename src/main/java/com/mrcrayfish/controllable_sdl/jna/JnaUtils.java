@@ -4,7 +4,7 @@ import java.util.List;
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 
-import static io.github.libsdl4j.api.stdinc.SdlStdinc.SDL_free;
+import static com.mrcrayfish.controllable_sdl.api.stdinc.SdlStdinc.SDL_free;
 
 public final class JnaUtils {
 

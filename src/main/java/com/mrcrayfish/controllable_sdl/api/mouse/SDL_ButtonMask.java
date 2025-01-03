@@ -1,14 +1,14 @@
 package com.mrcrayfish.controllable_sdl.api.mouse;
 
-import io.github.libsdl4j.jna.JnaEnum;
-import io.github.libsdl4j.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.mouse.SDL_Button.SDL_BUTTON_LEFT;
-import static io.github.libsdl4j.api.mouse.SDL_Button.SDL_BUTTON_MIDDLE;
-import static io.github.libsdl4j.api.mouse.SDL_Button.SDL_BUTTON_RIGHT;
-import static io.github.libsdl4j.api.mouse.SDL_Button.SDL_BUTTON_X1;
-import static io.github.libsdl4j.api.mouse.SDL_Button.SDL_BUTTON_X2;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_Button.SDL_BUTTON_LEFT;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_Button.SDL_BUTTON_MIDDLE;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_Button.SDL_BUTTON_RIGHT;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_Button.SDL_BUTTON_X1;
+import static com.mrcrayfish.controllable_sdl.api.mouse.SDL_Button.SDL_BUTTON_X2;
 
 public final class SDL_ButtonMask implements JnaEnum {
 

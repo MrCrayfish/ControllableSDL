@@ -1,14 +1,14 @@
 package com.mrcrayfish.controllable_sdl.api.shape;
 
-import io.github.libsdl4j.api.surface.SDL_Surface;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.api.video.SDL_WindowFlags;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_WindowFlags;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.shape.WindowShapeMode.ShapeModeBinarizeAlpha;
-import static io.github.libsdl4j.api.shape.WindowShapeMode.ShapeModeDefault;
-import static io.github.libsdl4j.api.shape.WindowShapeMode.ShapeModeReverseBinarizeAlpha;
+import static com.mrcrayfish.controllable_sdl.api.shape.WindowShapeMode.ShapeModeBinarizeAlpha;
+import static com.mrcrayfish.controllable_sdl.api.shape.WindowShapeMode.ShapeModeDefault;
+import static com.mrcrayfish.controllable_sdl.api.shape.WindowShapeMode.ShapeModeReverseBinarizeAlpha;
 
 /**
  * Definitions from file SDL_shape.h
@@ -75,11 +75,11 @@ public final class SdlShape {
      *
      * @param title The title of the window, in UTF-8 encoding.
      * @param x     The x position of the window,
-     *              {@link io.github.libsdl4j.api.video.SdlVideoConst#SDL_WINDOWPOS_CENTERED SDL_WINDOWPOS_CENTERED}, or
-     *              {@link io.github.libsdl4j.api.video.SdlVideoConst#SDL_WINDOWPOS_UNDEFINED SDL_WINDOWPOS_UNDEFINED}.
+     *              {@link com.mrcrayfish.controllable_sdl.api.video.SdlVideoConst#SDL_WINDOWPOS_CENTERED SDL_WINDOWPOS_CENTERED}, or
+     *              {@link com.mrcrayfish.controllable_sdl.api.video.SdlVideoConst#SDL_WINDOWPOS_UNDEFINED SDL_WINDOWPOS_UNDEFINED}.
      * @param y     The y position of the window,
-     *              {@link io.github.libsdl4j.api.video.SdlVideoConst#SDL_WINDOWPOS_CENTERED SDL_WINDOWPOS_CENTERED}, or
-     *              {@link io.github.libsdl4j.api.video.SdlVideoConst#SDL_WINDOWPOS_UNDEFINED SDL_WINDOWPOS_UNDEFINED}.
+     *              {@link com.mrcrayfish.controllable_sdl.api.video.SdlVideoConst#SDL_WINDOWPOS_CENTERED SDL_WINDOWPOS_CENTERED}, or
+     *              {@link com.mrcrayfish.controllable_sdl.api.video.SdlVideoConst#SDL_WINDOWPOS_UNDEFINED SDL_WINDOWPOS_UNDEFINED}.
      * @param w     The width of the window.
      * @param h     The height of the window.
      * @param flags The flags for the window, a mask of
@@ -93,7 +93,7 @@ public final class SdlShape {
      *              {@link SDL_WindowFlags#SDL_WINDOW_BORDERLESS SDL_WINDOW_BORDERLESS} is always set,
      *              and {@link SDL_WindowFlags#SDL_WINDOW_FULLSCREEN SDL_WINDOW_FULLSCREEN} is always unset.
      * @return the window created, or null if window creation failed.
-     * @see io.github.libsdl4j.api.video.SdlVideo#SDL_DestroyWindow(SDL_Window)
+     * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_DestroyWindow(SDL_Window)
      * @since This function is available since SDL 2.0.0.
      */
     public static native SDL_Window SDL_CreateShapedWindow(

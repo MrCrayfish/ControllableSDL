@@ -2,8 +2,8 @@ package com.mrcrayfish.controllable_sdl.api.messagebox;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.ContiguousArrayList;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.ContiguousArrayList;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**

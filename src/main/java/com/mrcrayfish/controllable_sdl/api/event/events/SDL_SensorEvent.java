@@ -4,7 +4,7 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_SENSORUPDATE;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_SENSORUPDATE;
 
 /**
  * Sensor event structure (event.sensor.*)
@@ -18,7 +18,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_SENSORUPDATE;
 })
 public final class SDL_SensorEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_SENSORUPDATE SDL_SENSORUPDATE} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_SENSORUPDATE SDL_SENSORUPDATE} */
     @MagicConstant(intValues = SDL_SENSORUPDATE)
     public int type;
 

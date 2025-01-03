@@ -6,11 +6,11 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static io.github.libsdl4j.api.Sdl.SDL_Init;
-import static io.github.libsdl4j.api.Sdl.SDL_Quit;
-import static io.github.libsdl4j.api.SdlSubSystemConst.SDL_INIT_VIDEO;
-import static io.github.libsdl4j.api.filesystem.SdlFilesystem.SDL_GetBasePath;
-import static io.github.libsdl4j.api.stdinc.SdlStdinc.SDL_GetNumAllocations;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Init;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Quit;
+import static com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst.SDL_INIT_VIDEO;
+import static com.mrcrayfish.controllable_sdl.api.filesystem.SdlFilesystem.SDL_GetBasePath;
+import static com.mrcrayfish.controllable_sdl.api.stdinc.SdlStdinc.SDL_GetNumAllocations;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SdlFilesystemTest {

@@ -2,10 +2,10 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.touch.SDL_TouchID;
+import com.mrcrayfish.controllable_sdl.api.touch.SDL_TouchID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_MULTIGESTURE;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_MULTIGESTURE;
 
 /**
  * Multiple Finger Gesture Event (event.mgesture.*)
@@ -23,7 +23,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_MULTIGESTURE;
 })
 public final class SDL_MultiGestureEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_MULTIGESTURE SDL_MULTIGESTURE} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_MULTIGESTURE SDL_MULTIGESTURE} */
     @MagicConstant(intValues = SDL_MULTIGESTURE)
     public int type;
 

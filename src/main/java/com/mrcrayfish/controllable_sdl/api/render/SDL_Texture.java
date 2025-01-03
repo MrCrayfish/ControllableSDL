@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.render;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
-import io.github.libsdl4j.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
 
 /**
  * An efficient driver-specific representation of pixel data.
@@ -22,7 +22,7 @@ import io.github.libsdl4j.api.surface.SDL_Surface;
  * <p>You can convert {@code SDL_Surface} to {@code SDL_Texture} using
  * {@link SdlRender#SDL_CreateTextureFromSurface(SDL_Renderer, SDL_Surface) SDL_CreateTextureFromSurface(...)},
  * after which you can release the SDL_Surface memory by
- * {@link io.github.libsdl4j.api.surface.SdlSurface#SDL_FreeSurface(SDL_Surface) SDL_FreeSurface(...)}</p>
+ * {@link com.mrcrayfish.controllable_sdl.api.surface.SdlSurface#SDL_FreeSurface(SDL_Surface) SDL_FreeSurface(...)}</p>
  */
 public final class SDL_Texture extends PointerType {
 

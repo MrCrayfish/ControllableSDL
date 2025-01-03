@@ -2,9 +2,9 @@ package com.mrcrayfish.controllable_sdl.api.version;
 
 import org.junit.jupiter.api.Test;
 
-import static io.github.libsdl4j.api.version.SdlVersion.SDL_CheckNativeLibraryMatchesAtLeastJavaBindingsVersion;
-import static io.github.libsdl4j.api.version.SdlVersion.SDL_GetJavaBindingsVersion;
-import static io.github.libsdl4j.api.version.SdlVersion.SDL_GetNativeLibraryVersion;
+import static com.mrcrayfish.controllable_sdl.api.version.SdlVersion.SDL_CheckNativeLibraryMatchesAtLeastJavaBindingsVersion;
+import static com.mrcrayfish.controllable_sdl.api.version.SdlVersion.SDL_GetJavaBindingsVersion;
+import static com.mrcrayfish.controllable_sdl.api.version.SdlVersion.SDL_GetNativeLibraryVersion;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

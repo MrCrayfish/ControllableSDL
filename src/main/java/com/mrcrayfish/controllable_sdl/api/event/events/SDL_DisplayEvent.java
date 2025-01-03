@@ -2,10 +2,10 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.video.SDL_DisplayEventID;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_DisplayEventID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DISPLAYEVENT;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_DISPLAYEVENT;
 
 /**
  * Display state change event data (event.display.*)
@@ -22,7 +22,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_DISPLAYEVENT;
 })
 public final class SDL_DisplayEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_DISPLAYEVENT SDL_DISPLAYEVENT} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_DISPLAYEVENT SDL_DISPLAYEVENT} */
     @MagicConstant(intValues = SDL_DISPLAYEVENT)
     public int type;
 

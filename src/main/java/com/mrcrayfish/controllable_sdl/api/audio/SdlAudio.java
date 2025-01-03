@@ -3,13 +3,13 @@ package com.mrcrayfish.controllable_sdl.api.audio;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.rwops.SDL_RWops;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
-import io.github.libsdl4j.jna.StringRef;
+import com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWops;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.StringRef;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.rwops.SdlRWops.SDL_RWFromFile;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SdlRWops.SDL_RWFromFile;
 
 /**
  * Definitions from file SDL_audio.h

@@ -2,9 +2,9 @@ package com.mrcrayfish.controllable_sdl.api.rect;
 
 import org.junit.jupiter.api.Test;
 
-import static io.github.libsdl4j.api.Sdl.SDL_Init;
-import static io.github.libsdl4j.api.Sdl.SDL_Quit;
-import static io.github.libsdl4j.api.rect.SdlRect.SDL_RectEmpty;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Init;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Quit;
+import static com.mrcrayfish.controllable_sdl.api.rect.SdlRect.SDL_RectEmpty;
 
 public final class SdlRectTest {
 

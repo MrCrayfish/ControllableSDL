@@ -2,11 +2,11 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.gamecontroller.SDL_GameControllerAxis;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerAxis;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERAXISMOTION;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERAXISMOTION;
 
 /**
  * Game controller axis motion event structure (event.caxis.*)
@@ -24,7 +24,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERAXISMOTIO
 })
 public final class SDL_ControllerAxisEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERAXISMOTION SDL_CONTROLLERAXISMOTION} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERAXISMOTION SDL_CONTROLLERAXISMOTION} */
     @MagicConstant(intValues = SDL_CONTROLLERAXISMOTION)
     public int type;
 

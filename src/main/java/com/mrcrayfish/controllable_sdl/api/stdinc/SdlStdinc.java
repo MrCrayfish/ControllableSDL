@@ -3,8 +3,8 @@ package com.mrcrayfish.controllable_sdl.api.stdinc;
 import com.sun.jna.CallbackReference;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
-import io.github.libsdl4j.jna.size_t;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.size_t;
 
 /**
  * Definitions from file SDL_stdinc.h

@@ -2,12 +2,12 @@ package com.mrcrayfish.controllable_sdl.api.keyboard;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.keycode.SDL_Keycode;
-import io.github.libsdl4j.api.keycode.SDL_Keymod;
-import io.github.libsdl4j.api.rect.SDL_Rect;
-import io.github.libsdl4j.api.scancode.SDL_Scancode;
-import io.github.libsdl4j.api.video.SDL_Window;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.keycode.SDL_Keycode;
+import com.mrcrayfish.controllable_sdl.api.keycode.SDL_Keymod;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.scancode.SDL_Scancode;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**
@@ -55,7 +55,7 @@ public final class SdlKeyboard {
      *
      * @param numkeys if non-null, receives the length of the returned array
      * @return a pointer to an array of key states.
-     * @see io.github.libsdl4j.api.event.SdlEvents#SDL_PumpEvents() SDL_PumpEvents()
+     * @see com.mrcrayfish.controllable_sdl.api.event.SdlEvents#SDL_PumpEvents() SDL_PumpEvents()
      * @see #SDL_ResetKeyboard()
      * @since This function is available since SDL 2.0.0.
      */

@@ -3,18 +3,18 @@ package com.mrcrayfish.controllable_sdl.api.surface;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.ByteByReference;
 import com.sun.jna.ptr.IntByReference;
-import io.github.libsdl4j.api.blendmode.SDL_BlendMode;
-import io.github.libsdl4j.api.pixels.SDL_Palette;
-import io.github.libsdl4j.api.pixels.SDL_PixelFormat;
-import io.github.libsdl4j.api.pixels.SDL_PixelFormatEnum;
-import io.github.libsdl4j.api.rect.SDL_Rect;
-import io.github.libsdl4j.api.rwops.SDL_RWops;
-import io.github.libsdl4j.jna.ContiguousArrayList;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.blendmode.SDL_BlendMode;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_Palette;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_PixelFormat;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_PixelFormatEnum;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWops;
+import com.mrcrayfish.controllable_sdl.jna.ContiguousArrayList;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.rwops.SdlRWops.SDL_RWFromFile;
-import static io.github.libsdl4j.api.surface.SDL_SurfaceFlags.SDL_RLEACCEL;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SdlRWops.SDL_RWFromFile;
+import static com.mrcrayfish.controllable_sdl.api.surface.SDL_SurfaceFlags.SDL_RLEACCEL;
 
 /**
  * Definitions from file SDL_surface.h
@@ -262,7 +262,7 @@ public final class SdlSurface {
      * @return a pointer to a new SDL_Surface structure or null if there was an
      * error; call SDL_GetError() for more information.
      * @see #SDL_FreeSurface(SDL_Surface)
-     * @see io.github.libsdl4j.api.rwops.SdlRWops#SDL_RWFromFile(String, String)
+     * @see com.mrcrayfish.controllable_sdl.api.rwops.SdlRWops#SDL_RWFromFile(String, String)
      * @see #SDL_LoadBMP(String)
      * @see #SDL_SaveBMP_RW(SDL_Surface, SDL_RWops, int)
      * @since This function is available since SDL 2.0.0.
@@ -591,7 +591,7 @@ public final class SdlSurface {
      *              leftover from SDL 1.2's API
      * @return the new SDL_Surface structure that is created or null if it fails;
      * call SDL_GetError() for more information.
-     * @see io.github.libsdl4j.api.pixels.SdlPixels#SDL_AllocFormat(int)
+     * @see com.mrcrayfish.controllable_sdl.api.pixels.SdlPixels#SDL_AllocFormat(int)
      * @see #SDL_ConvertSurfaceFormat(SDL_Surface, int, int)
      * @see #SDL_CreateRGBSurface(int, int, int, int, int, int, int, int)
      * @since This function is available since SDL 2.0.0.
@@ -616,7 +616,7 @@ public final class SdlSurface {
      *                    leftover from SDL 1.2's API
      * @return the new SDL_Surface structure that is created or null if it fails;
      * call SDL_GetError() for more information.
-     * @see io.github.libsdl4j.api.pixels.SdlPixels#SDL_AllocFormat(int)
+     * @see com.mrcrayfish.controllable_sdl.api.pixels.SdlPixels#SDL_AllocFormat(int)
      * @see #SDL_ConvertSurface(SDL_Surface, SDL_PixelFormat, int)
      * @see #SDL_CreateRGBSurface(int, int, int, int, int, int, int, int)
      * @since This function is available since SDL 2.0.0.

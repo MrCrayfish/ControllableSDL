@@ -2,12 +2,12 @@ package com.mrcrayfish.controllable_sdl.api.joystick.virtual;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.gamecontroller.SDL_GameControllerAxis;
-import io.github.libsdl4j.api.gamecontroller.SDL_GameControllerButton;
-import io.github.libsdl4j.api.joystick.SDL_JoystickType;
+import com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerAxis;
+import com.mrcrayfish.controllable_sdl.api.gamecontroller.SDL_GameControllerButton;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickType;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_VIRTUAL_JOYSTICK_DESC_VERSION;
+import static com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystickConst.SDL_VIRTUAL_JOYSTICK_DESC_VERSION;
 
 /**
  * The structure that defines an extended virtual joystick description
@@ -15,7 +15,7 @@ import static io.github.libsdl4j.api.joystick.SdlJoystickConst.SDL_VIRTUAL_JOYST
  * <p>The caller must zero the structure and then initialize the version with {@code SDL_VIRTUAL_JOYSTICK_DESC_VERSION} before passing it to SDL_JoystickAttachVirtualEx()
  * All other elements of this structure are optional and can be left 0.</p>
  *
- * @see io.github.libsdl4j.api.joystick.SdlJoystick#SDL_JoystickAttachVirtualEx(SDL_VirtualJoystickDesc)
+ * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystick#SDL_JoystickAttachVirtualEx(SDL_VirtualJoystickDesc)
  */
 @Structure.FieldOrder({
         "version",

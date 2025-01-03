@@ -5,10 +5,10 @@ import java.util.List;
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import com.sun.jna.WString;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
-import io.github.libsdl4j.jna.StringRef;
-import io.github.libsdl4j.jna.size_t;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.StringRef;
+import com.mrcrayfish.controllable_sdl.jna.size_t;
 
 /**
  * Definitions from file SDL_hidapi.h

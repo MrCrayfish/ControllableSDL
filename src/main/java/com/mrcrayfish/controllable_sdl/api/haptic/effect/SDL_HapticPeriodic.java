@@ -2,14 +2,14 @@ package com.mrcrayfish.controllable_sdl.api.haptic.effect;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.haptic.SDL_HapticDirection;
+import com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticDirection;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHDOWN;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHUP;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SINE;
-import static io.github.libsdl4j.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_TRIANGLE;
-import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHDOWN;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SAWTOOTHUP;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_SINE;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType.SDL_HAPTIC_TRIANGLE;
+import static com.mrcrayfish.controllable_sdl.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
 
 /**
  * A structure containing a template for a Periodic effect.
@@ -17,11 +17,11 @@ import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
  * <p>The struct handles the following effects:</p>
  *
  * <ul>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SINE SDL_HAPTIC_SINE}</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_LEFTRIGHT SDL_HAPTIC_LEFTRIGHT}</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_TRIANGLE SDL_HAPTIC_TRIANGLE}</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHUP SDL_HAPTIC_SAWTOOTHUP}</li>
- *     <li>{@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHDOWN SDL_HAPTIC_SAWTOOTHDOWN}</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SINE SDL_HAPTIC_SINE}</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_LEFTRIGHT SDL_HAPTIC_LEFTRIGHT}</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_TRIANGLE SDL_HAPTIC_TRIANGLE}</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHUP SDL_HAPTIC_SAWTOOTHUP}</li>
+ *     <li>{@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHDOWN SDL_HAPTIC_SAWTOOTHDOWN}</li>
  * </ul>
  *
  * <p>A periodic effect consists in a wave-shaped effect that repeats itself
@@ -68,12 +68,12 @@ import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
  *   \|  \|  \|  \|  \|  \|  \|
  * </pre>
  *
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SINE
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_LEFTRIGHT
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_TRIANGLE
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHUP
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHDOWN
- * @see io.github.libsdl4j.api.haptic.SDL_HapticEffect
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SINE
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_LEFTRIGHT
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_TRIANGLE
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHUP
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHDOWN
+ * @see com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffect
  */
 @Structure.FieldOrder({
         "type",
@@ -94,11 +94,11 @@ import static io.github.libsdl4j.api.haptic.SdlHapticConst.SDL_HAPTIC_INFINITY;
 public final class SDL_HapticPeriodic extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SINE SDL_HAPTIC_SINE},
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_LEFTRIGHT SDL_HAPTIC_LEFTRIGHT},
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_TRIANGLE SDL_HAPTIC_TRIANGLE},
-     * {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHUP SDL_HAPTIC_SAWTOOTHUP}
-     * or {@link io.github.libsdl4j.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHDOWN SDL_HAPTIC_SAWTOOTHDOWN}
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SINE SDL_HAPTIC_SINE},
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_LEFTRIGHT SDL_HAPTIC_LEFTRIGHT},
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_TRIANGLE SDL_HAPTIC_TRIANGLE},
+     * {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHUP SDL_HAPTIC_SAWTOOTHUP}
+     * or {@link com.mrcrayfish.controllable_sdl.api.haptic.SDL_HapticEffectType#SDL_HAPTIC_SAWTOOTHDOWN SDL_HAPTIC_SAWTOOTHDOWN}
      */
     @MagicConstant(intValues = {
             SDL_HAPTIC_SINE,

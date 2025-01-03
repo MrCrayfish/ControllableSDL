@@ -4,10 +4,10 @@ import com.sun.jna.Pointer;
 import com.sun.jna.PointerType;
 import com.sun.jna.Structure;
 import com.sun.jna.ptr.PointerByReference;
-import io.github.libsdl4j.api.pixels.SDL_PixelFormat;
-import io.github.libsdl4j.api.rect.SDL_Rect;
-import io.github.libsdl4j.api.render.SDL_Renderer;
-import io.github.libsdl4j.api.render.SDL_Texture;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_PixelFormat;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect;
+import com.mrcrayfish.controllable_sdl.api.render.SDL_Renderer;
+import com.mrcrayfish.controllable_sdl.api.render.SDL_Texture;
 
 /**
  * {@code SDL_Surface} is a structure holding a collection of pixels used in <b>software rendering</b> (also called blitting).
@@ -25,9 +25,9 @@ import io.github.libsdl4j.api.render.SDL_Texture;
  * {@code SDL_Texture} was added in SDL 2.x for hardware optimized rendering.</p>
  *
  * <p>You can convert {@code SDL_Surface} to {@code SDL_Texture} using
- * {@link io.github.libsdl4j.api.render.SdlRender#SDL_CreateTextureFromSurface(SDL_Renderer, SDL_Surface) SDL_CreateTextureFromSurface(...)},
+ * {@link com.mrcrayfish.controllable_sdl.api.render.SdlRender#SDL_CreateTextureFromSurface(SDL_Renderer, SDL_Surface) SDL_CreateTextureFromSurface(...)},
  * after which you can release the {@code SDL_Surface} memory by
- * {@link io.github.libsdl4j.api.surface.SdlSurface#SDL_FreeSurface(SDL_Surface) SDL_FreeSurface(...)}</p>
+ * {@link com.mrcrayfish.controllable_sdl.api.surface.SdlSurface#SDL_FreeSurface(SDL_Surface) SDL_FreeSurface(...)}</p>
  *
  * <p><b>Note:</b>This structure should be treated as read-only, except for {@code pixels},
  * which, if not null, contains the raw pixel data for the surface.</p>

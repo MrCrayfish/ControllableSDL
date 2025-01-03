@@ -42,8 +42,8 @@ import com.sun.jna.Structure;
  * SDL_RenderDrawRects(renderer, rectangleList);
  * </pre>
  *
- * @param <T> type of the Structure. Such as {@link io.github.libsdl4j.api.rect.SDL_Rect SDL_Rect}
- *            or {@link io.github.libsdl4j.api.messagebox.SDL_MessageBoxButtonData SDL_MessageBoxButtonData}.
+ * @param <T> type of the Structure. Such as {@link com.mrcrayfish.controllable_sdl.api.rect.SDL_Rect SDL_Rect}
+ *            or {@link com.mrcrayfish.controllable_sdl.api.messagebox.SDL_MessageBoxButtonData SDL_MessageBoxButtonData}.
  */
 public final class ContiguousArrayList<T extends Structure> implements List<T> {
 

@@ -4,9 +4,9 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERDEVICEADDED;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERDEVICEREMAPPED;
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERDEVICEREMOVED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERDEVICEADDED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERDEVICEREMAPPED;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERDEVICEREMOVED;
 
 /**
  * Controller device event structure (event.cdevice.*)
@@ -19,9 +19,9 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERDEVICEREM
 public final class SDL_ControllerDeviceEvent extends Structure {
 
     /**
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERDEVICEADDED SDL_CONTROLLERDEVICEADDED},
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERDEVICEREMOVED SDL_CONTROLLERDEVICEREMOVED}, or
-     * {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERDEVICEREMAPPED SDL_CONTROLLERDEVICEREMAPPED}
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERDEVICEADDED SDL_CONTROLLERDEVICEADDED},
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERDEVICEREMOVED SDL_CONTROLLERDEVICEREMOVED}, or
+     * {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERDEVICEREMAPPED SDL_CONTROLLERDEVICEREMAPPED}
      */
     @MagicConstant(intValues = {SDL_CONTROLLERDEVICEADDED, SDL_CONTROLLERDEVICEREMOVED, SDL_CONTROLLERDEVICEREMAPPED})
     public int type;

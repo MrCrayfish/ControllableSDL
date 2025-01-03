@@ -4,17 +4,17 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.ByteByReference;
 import com.sun.jna.ptr.FloatByReference;
 import com.sun.jna.ptr.LongByReference;
-import io.github.libsdl4j.api.SdlSubSystemConst;
-import io.github.libsdl4j.api.joystick.SDL_Joystick;
-import io.github.libsdl4j.api.joystick.SDL_JoystickGUID;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
-import io.github.libsdl4j.api.rwops.SDL_RWops;
-import io.github.libsdl4j.api.sensor.SDL_SensorType;
-import io.github.libsdl4j.jna.JnaUtils;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_Joystick;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickGUID;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.rwops.SDL_RWops;
+import com.mrcrayfish.controllable_sdl.api.sensor.SDL_SensorType;
+import com.mrcrayfish.controllable_sdl.jna.JnaUtils;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.rwops.SdlRWops.SDL_RWFromFile;
+import static com.mrcrayfish.controllable_sdl.api.rwops.SdlRWops.SDL_RWFromFile;
 
 /**
  * Definitions from file SDL_gamecontroller.h
@@ -167,8 +167,8 @@ public final class SdlGamecontroller {
      * @param guid a structure containing the GUID for which a mapping is desired
      * @return a mapping string or null on error; call SDL_GetError() for more
      * information.
-     * @see io.github.libsdl4j.api.joystick.SdlJoystick#SDL_JoystickGetDeviceGUID(int)
-     * @see io.github.libsdl4j.api.joystick.SdlJoystick#SDL_JoystickGetGUID(SDL_Joystick)
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystick#SDL_JoystickGetDeviceGUID(int)
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystick#SDL_JoystickGetGUID(SDL_Joystick)
      * @since This function is available since SDL 2.0.0.
      */
     public static String SDL_GameControllerMappingForGUID(
@@ -525,7 +525,7 @@ public final class SdlGamecontroller {
      * @param state can be one of {@code SDL_QUERY}, {@code SDL_IGNORE}, or {@code SDL_ENABLE}
      * @return the same value passed to the function, with exception to -1
      * (SDL_QUERY), which will return the current state.
-     * @see io.github.libsdl4j.api.joystick.SdlJoystick#SDL_JoystickEventState(int)
+     * @see com.mrcrayfish.controllable_sdl.api.joystick.SdlJoystick#SDL_JoystickEventState(int)
      * @since This function is available since SDL 2.0.0.
      */
     public static native int SDL_GameControllerEventState(

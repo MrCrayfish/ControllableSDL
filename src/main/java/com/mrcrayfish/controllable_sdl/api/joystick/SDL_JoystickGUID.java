@@ -1,7 +1,7 @@
 package com.mrcrayfish.controllable_sdl.api.joystick;
 
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.api.guid.SDL_GUID;
+import com.mrcrayfish.controllable_sdl.api.guid.SDL_GUID;
 
 /**
  * A structure that encodes the stable unique id for a joystick device

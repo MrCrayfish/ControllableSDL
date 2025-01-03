@@ -2,7 +2,7 @@ package com.mrcrayfish.controllable_sdl.api.sensor;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.LongByReference;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**
@@ -67,7 +67,7 @@ import org.intellij.lang.annotations.MagicConstant;
  *
  * <p>The axis data is not changed when the phone or controller is rotated.</p>
  *
- * @see io.github.libsdl4j.api.video.SdlVideo#SDL_GetDisplayOrientation(int)
+ * @see com.mrcrayfish.controllable_sdl.api.video.SdlVideo#SDL_GetDisplayOrientation(int)
  */
 public final class SdlSensor {
 

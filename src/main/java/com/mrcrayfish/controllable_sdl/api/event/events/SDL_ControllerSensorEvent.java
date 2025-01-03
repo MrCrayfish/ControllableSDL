@@ -2,11 +2,11 @@ package com.mrcrayfish.controllable_sdl.api.event.events;
 
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
-import io.github.libsdl4j.api.joystick.SDL_JoystickID;
-import io.github.libsdl4j.api.sensor.SDL_SensorType;
+import com.mrcrayfish.controllable_sdl.api.joystick.SDL_JoystickID;
+import com.mrcrayfish.controllable_sdl.api.sensor.SDL_SensorType;
 import org.intellij.lang.annotations.MagicConstant;
 
-import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERSENSORUPDATE;
+import static com.mrcrayfish.controllable_sdl.api.event.SDL_EventType.SDL_CONTROLLERSENSORUPDATE;
 
 /**
  * Game controller sensor event structure (event.csensor.*)
@@ -21,7 +21,7 @@ import static io.github.libsdl4j.api.event.SDL_EventType.SDL_CONTROLLERSENSORUPD
 })
 public final class SDL_ControllerSensorEvent extends Structure {
 
-    /** {@link io.github.libsdl4j.api.event.SDL_EventType#SDL_CONTROLLERSENSORUPDATE SDL_CONTROLLERSENSORUPDATE} */
+    /** {@link com.mrcrayfish.controllable_sdl.api.event.SDL_EventType#SDL_CONTROLLERSENSORUPDATE SDL_CONTROLLERSENSORUPDATE} */
     @MagicConstant(intValues = SDL_CONTROLLERSENSORUPDATE)
     public int type;
 

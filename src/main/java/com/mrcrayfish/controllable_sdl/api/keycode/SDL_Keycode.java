@@ -1,9 +1,9 @@
 package com.mrcrayfish.controllable_sdl.api.keycode;
 
-import io.github.libsdl4j.jna.JnaEnum;
+import com.mrcrayfish.controllable_sdl.jna.JnaEnum;
 
-import static io.github.libsdl4j.api.keycode.SdlKeycode.SDL_SCANCODE_TO_KEYCODE;
-import static io.github.libsdl4j.api.scancode.SDL_Scancode.*;
+import static com.mrcrayfish.controllable_sdl.api.keycode.SdlKeycode.SDL_SCANCODE_TO_KEYCODE;
+import static com.mrcrayfish.controllable_sdl.api.scancode.SDL_Scancode.*;
 
 /**
  * The SDL virtual key representation.

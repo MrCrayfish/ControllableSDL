@@ -3,7 +3,7 @@ package com.mrcrayfish.controllable_sdl.api.guid;
 import java.nio.charset.StandardCharsets;
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 
 /**
  * Definitions from file SDL_guid.h

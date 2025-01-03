@@ -2,28 +2,28 @@ package com.mrcrayfish.controllable_sdl.api.pixels;
 
 import java.util.Arrays;
 import java.util.List;
-import io.github.libsdl4j.api.surface.SDL_Surface;
-import io.github.libsdl4j.api.video.SDL_Window;
+import com.mrcrayfish.controllable_sdl.api.surface.SDL_Surface;
+import com.mrcrayfish.controllable_sdl.api.video.SDL_Window;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
-import static io.github.libsdl4j.api.Sdl.SDL_Init;
-import static io.github.libsdl4j.api.Sdl.SDL_Quit;
-import static io.github.libsdl4j.api.SdlSubSystemConst.SDL_INIT_VIDEO;
-import static io.github.libsdl4j.api.pixels.SdlPixels.SDL_AllocPalette;
-import static io.github.libsdl4j.api.pixels.SdlPixels.SDL_FreePalette;
-import static io.github.libsdl4j.api.pixels.SdlPixels.SDL_SetPaletteColors;
-import static io.github.libsdl4j.api.surface.SdlSurface.SDL_BlitSurface;
-import static io.github.libsdl4j.api.surface.SdlSurface.SDL_CreateRGBSurface;
-import static io.github.libsdl4j.api.surface.SdlSurface.SDL_FreeSurface;
-import static io.github.libsdl4j.api.surface.SdlSurface.SDL_SetSurfacePalette;
-import static io.github.libsdl4j.api.timer.SdlTimer.SDL_Delay;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_CreateWindow;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_DestroyWindow;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_GetWindowSurface;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_UpdateWindowSurface;
-import static io.github.libsdl4j.api.video.SdlVideoConst.SDL_WINDOWPOS_CENTERED;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Init;
+import static com.mrcrayfish.controllable_sdl.api.Sdl.SDL_Quit;
+import static com.mrcrayfish.controllable_sdl.api.SdlSubSystemConst.SDL_INIT_VIDEO;
+import static com.mrcrayfish.controllable_sdl.api.pixels.SdlPixels.SDL_AllocPalette;
+import static com.mrcrayfish.controllable_sdl.api.pixels.SdlPixels.SDL_FreePalette;
+import static com.mrcrayfish.controllable_sdl.api.pixels.SdlPixels.SDL_SetPaletteColors;
+import static com.mrcrayfish.controllable_sdl.api.surface.SdlSurface.SDL_BlitSurface;
+import static com.mrcrayfish.controllable_sdl.api.surface.SdlSurface.SDL_CreateRGBSurface;
+import static com.mrcrayfish.controllable_sdl.api.surface.SdlSurface.SDL_FreeSurface;
+import static com.mrcrayfish.controllable_sdl.api.surface.SdlSurface.SDL_SetSurfacePalette;
+import static com.mrcrayfish.controllable_sdl.api.timer.SdlTimer.SDL_Delay;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_CreateWindow;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_DestroyWindow;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_GetWindowSurface;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideo.SDL_UpdateWindowSurface;
+import static com.mrcrayfish.controllable_sdl.api.video.SdlVideoConst.SDL_WINDOWPOS_CENTERED;
 
 public final class SdlPixelsTest {
 

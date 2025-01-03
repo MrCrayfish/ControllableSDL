@@ -1,6 +1,6 @@
 package com.mrcrayfish.controllable_sdl.api.touch;
 
-import io.github.libsdl4j.jna.SdlNativeLibraryLoader;
+import com.mrcrayfish.controllable_sdl.jna.SdlNativeLibraryLoader;
 import org.intellij.lang.annotations.MagicConstant;
 
 /**
@@ -84,7 +84,7 @@ public final class SdlTouch {
      * @param index   the index of the requested finger
      * @return a pointer to the SDL_Finger object or null if no object at the
      * given ID and index could be found.
-     * @see io.github.libsdl4j.api.gesture.SdlGesture#SDL_RecordGesture(SDL_TouchID)
+     * @see com.mrcrayfish.controllable_sdl.api.gesture.SdlGesture#SDL_RecordGesture(SDL_TouchID)
      * @since This function is available since SDL 2.0.0.
      */
     public static native SDL_Finger SDL_GetTouchFinger(

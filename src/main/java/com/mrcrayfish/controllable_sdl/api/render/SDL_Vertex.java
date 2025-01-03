@@ -1,9 +1,9 @@
 package com.mrcrayfish.controllable_sdl.api.render;
 
 import com.sun.jna.Pointer;
-import io.github.libsdl4j.api.pixels.SDL_Color;
-import io.github.libsdl4j.api.rect.SDL_FPoint;
-import io.github.libsdl4j.jna.PojoStructure;
+import com.mrcrayfish.controllable_sdl.api.pixels.SDL_Color;
+import com.mrcrayfish.controllable_sdl.api.rect.SDL_FPoint;
+import com.mrcrayfish.controllable_sdl.jna.PojoStructure;
 
 /**
  * Vertex structure
