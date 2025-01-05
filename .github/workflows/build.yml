@@ -187,27 +187,49 @@ jobs:
         with:
           path: src/main/resources
           merge-multiple: true
-      - name: List Natives
-        run: |
-          cd src/main/resources
-          ls
+      - name: Load Keystore
+        id: keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        if: ${{ env.KEYSTORE_BASE64 != '' }}
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: 'keystore.jks'
+          encodedString: ${{ env.KEYSTORE_BASE64 }}
       - name: Run Tests
         run: |
           ./gradlew test
       - name: Build JAR
         id: build
+        env:
+          KEYSTORE_FILE: ${{ steps.keystore.output.filePath }}
+          KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASS }}
         run: |
           ./gradlew build -PexcludeTests=true
-          echo "artifact=build/libs/controllable-sdl-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
-      - name: Upload Artifact
+          echo "artifact=build/libs/ControllableSDL-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
+#      - name: Publish to Github Packages
+#        env:
+#          SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+#          SIGNING_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
+#          PACKAGES_REPO: ${{ env.PACKAGES_REPOSITORY }}
+#          GPR_USER: ${{ env.GPR_USER }}
+#          GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
+#        run: |
+#          ./gradlew publish
+#      - name: Create Release
+#        uses: ncipollo/release-action@v1
+#        if: ${{ success() }}
+#        with:
+#          name: ControllableSDL ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
+#          tag: ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
+#          artifacts: 'build/libs/'
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: controllable-sdl-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
-          path: ${{ steps.build.outputs.artifact }}
-
-  #    - name: Publish to GitHub Packages
-  #      run: |
-  #        ./gradlew publish
+          name: ControllableSDL ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
+          path: build/libs/
+  #
   #    - name: Import GPG
   #      env:
   #        SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}

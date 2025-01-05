@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'signing'
 }
 
 repositories {
@@ -30,7 +31,7 @@ if (project.hasProperty('excludeTests') && project.excludeTests == 'true') {
     }
 }
 
-group = 'com.mrcrayfish.controllable_sdl'
+group = 'com.mrcrayfish'
 version = "${sdl2_version}-${controllable_sdl_version}"
 description = 'ControllableSDL'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -42,8 +43,22 @@ java {
 
 publishing {
     publications {
-        maven(MavenPublication) {
-            from(components.java)
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        if (Boolean.getBoolean("CI")) {
+            if (env("PACKAGES_REPO") && env("GPR_USER") && env("GPR_TOKEN")) {
+                maven {
+                    name = "GitHub Packages"
+                    url = uri(env("PACKAGES_REPO"))
+                    credentials {
+                        username = env("GPR_USER")
+                        password = env("GPR_TOKEN")
+                    }
+                }
+            }
         }
     }
 }
@@ -55,4 +70,41 @@ tasks.withType(JavaCompile).configureEach {
 tasks.withType(Javadoc).configureEach {
     options.encoding = 'UTF-8'
     options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+signing {
+    if (Boolean.getBoolean("CI")) {
+        if (env("GPG_SIGNING_KEY") && env("GPG_SIGNING_PASSWORD")) {
+            def signingKey = env("GPG_SIGNING_KEY")
+            def signingPassword = env("GPG_SIGNING_PASSWORD")
+            useInMemoryPgpKeys(signingKey, signingPassword)
+            sign publishing.publications.mavenJava
+        }
+    }
+}
+
+tasks.register('signJar', Exec) {
+    dependsOn jar
+    onlyIf {
+        Boolean.getBoolean("CI") &&
+        env("KEYSTORE_FILE") &&
+        env("KEYSTORE_ALIAS") &&
+        env("KEYSTORE_PASSWORD")
+    }
+    doLast {
+        def signingJarFile = tasks.jar.getArchiveFile().get().getAsFile()
+        def keystoreFile = env("KEYSTORE_FILE")
+        def keystorePassword = env("KEYSTORE_PASSWORD")
+        def keystoreAlias = env("KEYSTORE_ALIAS")
+        commandLine "jarsigner",
+            "-keystore", keystoreFile,
+            "-storepass", keystorePassword,
+            "-keypass", keystorePassword,
+            signingJarFile, keystoreAlias
+    }
+}
+jar.finalizedBy signJar
+
+static def env(String key) {
+    return System.getenv(key)
 }
