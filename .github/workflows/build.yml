@@ -190,12 +190,12 @@ jobs:
       - name: Load Keystore
         id: keystore
         env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-        if: ${{ env.KEYSTORE_BASE64 != '' }}
+          JKS: ${{ secrets.KEYSTORE_BASE64 }}
+        if: ${{ env.JKS != '' }}
         uses: timheuer/base64-to-file@v1.2
         with:
           fileName: 'keystore.jks'
-          encodedString: ${{ env.KEYSTORE_BASE64 }}
+          encodedString: ${{ env.JKS }}
       - name: Run Tests
         run: |
           ./gradlew test
