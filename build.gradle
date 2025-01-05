@@ -85,6 +85,8 @@ signing {
 
 tasks.register('signJar') {
     dependsOn jar
+    mustRunAfter jar
+
     onlyIf {
         env("KEYSTORE_FILE") && env("KEYSTORE_ALIAS") && env("KEYSTORE_PASSWORD")
     }
@@ -103,4 +105,7 @@ tasks.register('signJar') {
         }
     }
 }
-jar.finalizedBy signJar
+
+tasks.named('build') {
+    dependsOn signJar
+}
