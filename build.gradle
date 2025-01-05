@@ -41,6 +41,10 @@ java {
     withJavadocJar()
 }
 
+def env = { String key ->
+    return System.getenv(key)
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -83,28 +87,24 @@ signing {
     }
 }
 
-tasks.register('signJar', Exec) {
+tasks.register('signJar') {
     dependsOn jar
     onlyIf {
-        Boolean.getBoolean("CI") &&
-        env("KEYSTORE_FILE") &&
-        env("KEYSTORE_ALIAS") &&
-        env("KEYSTORE_PASSWORD")
+        Boolean.getBoolean("CI") && env("KEYSTORE_FILE") && env("KEYSTORE_ALIAS") && env("KEYSTORE_PASSWORD")
     }
+
+    def jarFile = jar.archiveFile.get().asFile
+    def keystoreFile = env("KEYSTORE_FILE")
+    def keystoreAlias = env("KEYSTORE_ALIAS")
+    def keystorePassword = env("KEYSTORE_PASSWORD")
+
     doLast {
-        def signingJarFile = tasks.jar.getArchiveFile().get().getAsFile()
-        def keystoreFile = env("KEYSTORE_FILE")
-        def keystorePassword = env("KEYSTORE_PASSWORD")
-        def keystoreAlias = env("KEYSTORE_ALIAS")
-        commandLine "jarsigner",
-            "-keystore", keystoreFile,
-            "-storepass", keystorePassword,
-            "-keypass", keystorePassword,
-            signingJarFile, keystoreAlias
+        def cmd = ['jarsigner', '-keystore', keystoreFile, '-storepass', keystorePassword, jarFile, keystoreAlias]
+        def process = cmd.execute()
+        def exitCode = process.waitFor()
+        if (exitCode != 0) {
+            throw new GradleException("JAR signing failed!\nError: ${process.in.text}")
+        }
     }
 }
 jar.finalizedBy signJar
-
-static def env(String key) {
-    return System.getenv(key)
-}
