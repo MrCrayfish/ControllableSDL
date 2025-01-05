@@ -1,7 +1,9 @@
 name: Build Controllable-SDL
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-sdl-windows:
@@ -208,44 +210,17 @@ jobs:
         run: |
           ./gradlew build -PexcludeTests=true
           echo "artifact=build/libs/ControllableSDL-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
-#      - name: Publish to Github Packages
-#        env:
-#          SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-#          SIGNING_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
-#          PACKAGES_REPO: ${{ env.PACKAGES_REPOSITORY }}
-#          GPR_USER: ${{ env.GPR_USER }}
-#          GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
-#        run: |
-#          ./gradlew publish
-#      - name: Create Release
-#        uses: ncipollo/release-action@v1
-#        if: ${{ success() }}
-#        with:
-#          name: ControllableSDL ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
-#          tag: ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
-#          artifacts: 'build/libs/'
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Publish to Github Packages
+        env:
+          SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          SIGNING_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
+          PACKAGES_REPO: ${{ env.PACKAGES_REPOSITORY }}
+          GPR_USER: ${{ env.GPR_USER }}
+          GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
+        run: |
+          ./gradlew publish
+      - name: Create Release
+        uses: ncipollo/release-action@v1
         with:
-          name: ControllableSDL ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}
-          path: build/libs/
-  #
-  #    - name: Import GPG
-  #      env:
-  #        SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
-  #        SIGNING_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-  #      if: ${{ env.SIGNING_KEY != '' && env.SIGNING_PASSPHRASE != '' }}
-  #      uses: crazy-max/ghaction-import-gpg@v6.2.0
-  #      with:
-  #        gpg_private_key: ${{ env.SIGNING_KEY }}
-  #        passphrase: ${{ env.SIGNING_PASSPHRASE }}
-  #    - name: Sign JAR
-  #      env:
-  #        SIGNING_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-  #      if: ${{ env.SIGNING_PASSPHRASE != '' }}
-  #      run: |
-  #        gpg --batch --yes --passphrase "${{ env.SIGNING_PASSPHRASE }}" --armor --detach-sign ${{ steps.build.outputs.artifact }}
-  #    - name: Create Release
-  #      uses: ncipollo/release-action@v1
-  #      with:
-  #        artifacts: '${{ steps.build.outputs.artifact }}, ${{ steps.build.outputs.artifact }}.asc'
+          name: 'ControllableSDL ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}'
+          artifacts: build/libs/
