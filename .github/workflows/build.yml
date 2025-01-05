@@ -166,6 +166,7 @@ jobs:
   build-jar:
     needs: [build-sdl-windows, build-sdl-macos, build-sdl-linux]
     runs-on: ubuntu-latest
+    environment: Build
     name: Build JAR
     steps:
       - uses: actions/checkout@v4
