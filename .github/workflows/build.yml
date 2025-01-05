@@ -202,7 +202,7 @@ jobs:
       - name: Run Tests
         run: |
           ./gradlew test
-      - name: Build JAR
+      - name: Build
         id: build
         env:
           KEYSTORE_FILE: ${{ steps.keystore.output.filePath }}
@@ -224,4 +224,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           name: '${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}'
-          artifacts: build/libs/
+          artifacts: ${{ steps.build.outputs.artifact }}
