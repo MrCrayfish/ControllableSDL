@@ -213,10 +213,10 @@ jobs:
           echo "artifact=build/libs/ControllableSDL-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
       - name: Publish to Github Packages
         env:
-          SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          SIGNING_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
-          PACKAGES_REPO: ${{ env.PACKAGES_REPOSITORY }}
-          GPR_USER: ${{ env.GPR_USER }}
+          GPG_SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_SIGNING_PASSWORD: ${{ secrets.GPG_PASSPHRASE }}
+          PACKAGES_REPO: ${{ vars.PACKAGES_REPOSITORY }}
+          GPR_USER: ${{ vars.GPR_USER }}
           GPR_TOKEN: ${{ secrets.GPR_TOKEN }}
         run: |
           ./gradlew publish

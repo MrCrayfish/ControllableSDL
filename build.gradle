@@ -52,15 +52,13 @@ publishing {
         }
     }
     repositories {
-        if (Boolean.getBoolean("CI")) {
-            if (env("PACKAGES_REPO") && env("GPR_USER") && env("GPR_TOKEN")) {
-                maven {
-                    name = "GitHub Packages"
-                    url = uri(env("PACKAGES_REPO"))
-                    credentials {
-                        username = env("GPR_USER")
-                        password = env("GPR_TOKEN")
-                    }
+        if (env("PACKAGES_REPO") && env("GPR_USER") && env("GPR_TOKEN")) {
+            maven {
+                name = "GitHub Packages"
+                url = uri(env("PACKAGES_REPO"))
+                credentials {
+                    username = env("GPR_USER")
+                    password = env("GPR_TOKEN")
                 }
             }
         }
@@ -77,20 +75,18 @@ tasks.withType(Javadoc).configureEach {
 }
 
 signing {
-    if (Boolean.getBoolean("CI")) {
-        if (env("GPG_SIGNING_KEY") && env("GPG_SIGNING_PASSWORD")) {
-            def signingKey = env("GPG_SIGNING_KEY")
-            def signingPassword = env("GPG_SIGNING_PASSWORD")
-            useInMemoryPgpKeys(signingKey, signingPassword)
-            sign publishing.publications.mavenJava
-        }
+    if (env("GPG_SIGNING_KEY") && env("GPG_SIGNING_PASSWORD")) {
+        def signingKey = env("GPG_SIGNING_KEY")
+        def signingPassword = env("GPG_SIGNING_PASSWORD")
+        useInMemoryPgpKeys(signingKey, signingPassword)
+        sign publishing.publications.mavenJava
     }
 }
 
 tasks.register('signJar') {
     dependsOn jar
     onlyIf {
-        Boolean.getBoolean("CI") && env("KEYSTORE_FILE") && env("KEYSTORE_ALIAS") && env("KEYSTORE_PASSWORD")
+        env("KEYSTORE_FILE") && env("KEYSTORE_ALIAS") && env("KEYSTORE_PASSWORD")
     }
 
     def jarFile = jar.archiveFile.get().asFile
