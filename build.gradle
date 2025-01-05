@@ -34,7 +34,7 @@ if (project.hasProperty('excludeTests') && project.excludeTests == 'true') {
 group = 'com.mrcrayfish'
 version = "${sdl2_version}-${controllable_sdl_version}"
 description = 'ControllableSDL'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 java {
     withSourcesJar()
