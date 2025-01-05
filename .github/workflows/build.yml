@@ -223,5 +223,5 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          name: 'ControllableSDL ${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}'
+          name: '${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}'
           artifacts: build/libs/
