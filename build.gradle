@@ -54,7 +54,7 @@ publishing {
     repositories {
         if (env("PACKAGES_REPO") && env("GPR_USER") && env("GPR_TOKEN")) {
             maven {
-                name = "GitHub Packages"
+                name = "GitHubPackages"
                 url = uri(env("PACKAGES_REPO"))
                 credentials {
                     username = env("GPR_USER")
