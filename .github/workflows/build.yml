@@ -210,7 +210,7 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASS }}
         run: |
           ./gradlew build -PexcludeTests=true
-          echo "artifact=build/libs/ControllableSDL-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
+          echo "artifact=build/libs/controllable-sdl-${{ steps.properties.outputs.sdl2_version }}-${{ steps.properties.outputs.controllable_sdl_version }}.jar" >> "$GITHUB_OUTPUT"
       - name: Publish to Github Packages
         env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
