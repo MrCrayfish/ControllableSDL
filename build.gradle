@@ -31,6 +31,10 @@ if (project.hasProperty('excludeTests') && project.excludeTests == 'true') {
     }
 }
 
+base {
+    archivesName = 'controllable-sdl'
+}
+
 group = 'com.mrcrayfish'
 version = "${sdl2_version}-${controllable_sdl_version}"
 description = 'ControllableSDL'
