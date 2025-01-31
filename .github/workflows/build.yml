@@ -99,8 +99,8 @@ jobs:
           cd artifact_contents
           mkdir -p darwin-x86-64
           cp ../SDL/build/lib/libSDL2.dylib darwin-x86-64
-          mkdir -p darwin-arm64
-          cp ../SDL/build/lib/libSDL2.dylib darwin-arm64
+          mkdir -p darwin-aarch64
+          cp ../SDL/build/lib/libSDL2.dylib darwin-aarch64
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
