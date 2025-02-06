@@ -13,7 +13,7 @@ jobs:
         config:
           - { arch: 'x86', name: 'x86', machine_type: '0x014C', output: 'win32-x86' }
           - { arch: 'x64', name: 'x64', machine_type: '0x8664', output: 'win32-x86-64' }
-          - { arch: 'x86_arm64', name: 'arm64', machine_type: '0xAA64', output: 'win32-arm64' }
+          - { arch: 'x86_arm64', name: 'arm64', machine_type: '0xAA64', output: 'win32-aarch64' }
     name: Windows (${{ matrix.config.name }})
     steps:
       - uses: actions/checkout@v4
