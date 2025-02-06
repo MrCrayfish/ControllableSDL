@@ -153,7 +153,7 @@ public final class SdlError {
     /* Varargs are not supported in JNA Direct mapping, so Interface mapping is used here. */
     private interface NativeVarargFunctions extends Library {
 
-        NativeVarargFunctions INSTANCE = SdlNativeLibraryLoader.loadLibSDL2InterfaceInstance(NativeVarargFunctions.class);
+        NativeVarargFunctions INSTANCE = SdlNativeLibraryLoader.loadSDL2InterfaceInstance(NativeVarargFunctions.class);
 
         int SDL_SetError(
                 String fmt,

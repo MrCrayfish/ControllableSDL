@@ -454,7 +454,7 @@ public final class SdlLog {
     /* Varargs are not supported in JNA Direct mapping, so Interface mapping is used here. */
     private interface NativeVarargFunctions extends Library {
 
-        NativeVarargFunctions INSTANCE = SdlNativeLibraryLoader.loadLibSDL2InterfaceInstance(NativeVarargFunctions.class);
+        NativeVarargFunctions INSTANCE = SdlNativeLibraryLoader.loadSDL2InterfaceInstance(NativeVarargFunctions.class);
 
         void SDL_Log(
                 String fmt,
