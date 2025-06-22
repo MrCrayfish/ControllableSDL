@@ -131,21 +131,28 @@ jobs:
       - name: Install Tools
         run: |
           sudo apt-get update
-          sudo apt-get install build-essential libsdl2-dev ${{ matrix.config.toolchain }}
+          sudo apt-get install build-essential libsdl2-dev ${{ matrix.config.toolchain }} ninja-build
       - name: Build SDL
         run: |
-          export CC=${{ matrix.config.arch }}-linux-gnu-gcc
-          export CXX=${{ matrix.config.arch }}-linux-gnu-g++
-          export CFLAGS="${{ matrix.config.cflags }}"
-          export CXXFLAGS="${{ matrix.config.cxxflags }}"
-          ./configure --host=${{ matrix.config.arch }}-linux-gnu --prefix=$(pwd)/build --enable-shared
-          make -j$(nproc)
-          make install
+          mkdir build
+          cd build
+          cmake .. -G Ninja \
+            -DCMAKE_SYSTEM_NAME=Linux \
+            -DCMAKE_SYSTEM_PROCESSOR=${{ matrix.config.arch }} \
+            -DCMAKE_C_COMPILER=${{ matrix.config.arch }}-linux-gnu-gcc \
+            -DCMAKE_CXX_COMPILER=${{ matrix.config.arch }}-linux-gnu-g++ \
+            -DCMAKE_C_FLAGS="${{ matrix.config.cflags }}" \
+            -DCMAKE_CXX_FLAGS="${{ matrix.config.cxxflags }}" \
+            -DSDL_VIDEO=OFF \
+            -DSDL_AUDIO=OFF \
+            -DHAVE_LIBSAMPLERATE_H=OFF
+          ninja
+          sudo ninja install
         working-directory: SDL
       - name: Verify Architecture
         run: |
           expected="${{ matrix.config.objdump_arch }}"
-          found=$(${{ matrix.config.dumper }} -f $(readlink -f ./build/lib/libSDL2.so) | awk '/architecture/ {split($2, a, ","); print a[1]}' | cut -d',' -f1)
+          found=$(${{ matrix.config.dumper }} -f $(readlink -f /usr/local/lib/libSDL2.so) | awk '/architecture/ {split($2, a, ","); print a[1]}' | cut -d',' -f1)
           if [ "$found" != "$expected" ]; then
             echo "Invalid architecture. Expecting $expected, but got $found"
             exit 1
@@ -157,7 +164,7 @@ jobs:
           mkdir artifact_contents
           cd artifact_contents
           mkdir -p ${{ matrix.config.output }}
-          cp -L ../SDL/build/lib/libSDL2.so ${{ matrix.config.output }}/libSDL2.so
+          cp -L /usr/local/lib/libSDL2.so ${{ matrix.config.output }}/libSDL2.so
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
