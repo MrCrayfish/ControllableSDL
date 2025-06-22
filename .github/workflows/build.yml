@@ -107,7 +107,7 @@ jobs:
           name: sdl-natives-macos-universal
           path: artifact_contents
   build-sdl-linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         config:
