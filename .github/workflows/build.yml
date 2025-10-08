@@ -36,8 +36,16 @@ jobs:
           arch: ${{ matrix.config.arch }}
       - name: Build SDL
         run: |
-          cmake -GNinja -S SDL -B SDL/build -DCMAKE_BUILD_TYPE=Release
-          cmake --build SDL/build --config Release
+          mkdir build
+          cd build
+          cmake .. -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DSDL_VIDEO=OFF \
+            -DSDL_AUDIO=OFF \
+            -DSDL_RENDER=OFF \
+            -DHAVE_LIBSAMPLERATE_H=OFF
+          ninja
+        working-directory: SDL
       - name: Verify Architecture
         run: |
           # Beware, no sanity checks
@@ -143,8 +151,10 @@ jobs:
             -DCMAKE_CXX_COMPILER=${{ matrix.config.arch }}-linux-gnu-g++ \
             -DCMAKE_C_FLAGS="${{ matrix.config.cflags }}" \
             -DCMAKE_CXX_FLAGS="${{ matrix.config.cxxflags }}" \
+            -DCMAKE_BUILD_TYPE=Release \
             -DSDL_VIDEO=OFF \
             -DSDL_AUDIO=OFF \
+            -DSDL_RENDER=OFF \
             -DHAVE_LIBSAMPLERATE_H=OFF
           ninja
           sudo ninja install
