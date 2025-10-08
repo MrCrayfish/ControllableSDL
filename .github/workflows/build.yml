@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 jobs:
   build-sdl-windows:
@@ -38,11 +39,11 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -G Ninja \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DSDL_VIDEO=OFF \
-            -DSDL_AUDIO=OFF \
-            -DSDL_RENDER=OFF \
+          cmake .. -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DSDL_VIDEO=OFF `
+            -DSDL_AUDIO=OFF `
+            -DSDL_RENDER=OFF `
             -DHAVE_LIBSAMPLERATE_H=OFF
           ninja
         working-directory: SDL
