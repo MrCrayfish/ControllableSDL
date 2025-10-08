@@ -39,6 +39,7 @@ public final class SdlRenderTest {
     }
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "CI", matches = "true")
     public void control() {
         int renderDriversCount = SDL_GetNumRenderDrivers();
         assertTrue(renderDriversCount > 0);
