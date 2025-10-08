@@ -565,6 +565,7 @@ SDL_FORCE_INLINE void SDL_memset4(void *dst, Uint32 val, size_t dwords)
         return;
     }
     switch (dwords % 4) {
+        default:
         case 0: do {    *_p++ = _val;   SDL_FALLTHROUGH;
         case 3:         *_p++ = _val;   SDL_FALLTHROUGH;
         case 2:         *_p++ = _val;   SDL_FALLTHROUGH;
@@ -750,8 +751,12 @@ size_t wcslcpy(wchar_t *dst, const wchar_t *src, size_t size);
 size_t wcslcat(wchar_t *dst, const wchar_t *src, size_t size);
 #endif
 
+#ifndef _WIN32
 /* strdup is not ANSI but POSIX, and its prototype might be hidden... */
+/* not for windows: might conflict with string.h where strdup may have
+ * dllimport attribute: https://github.com/libsdl-org/SDL/issues/12948 */
 char *strdup(const char *str);
+#endif
 
 /* Starting LLVM 16, the analyser errors out if these functions do not have
    their prototype defined (clang-diagnostic-implicit-function-declaration) */
